@@ -1,0 +1,4217 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]> <html lang="en-US" class="ie9 loading-site no-js"> <![endif]-->
+<!--[if IE 8 ]> <html lang="en-US" class="ie8 loading-site no-js"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en-US" class="loading-site no-js"> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"NRJS-7182f1690051a06a003",applicationID:"1039819783"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(7),c=e(8),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(9);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e){return!(!e||!e.protocol||"file:"===e.protocol)}t.exports=r},{}],4:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(6),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],5:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],6:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],7:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],8:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],9:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(7),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=x.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=e(2),c=e("handle"),f=e(7),u=e("ee"),s=e(5),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,w=g&&g.prototype;if(d(p.location)){NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:b,userAgent:s};e(1),e(4),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(8),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
+	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<link rel="pingback" href="https://sideaita.net/xmlrpc.php">
+
+	<script>(function(html){html.className = html.className.replace(/\bno-js\b/,'js')})(document.documentElement);</script>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" data-pagespeed-no-defer type="text/javascript">//<![CDATA[
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+//]]>
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com --><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- This site is optimized with the Yoast SEO Premium plugin v16.1.1 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Sidea Fitness company move smarter, get stronger, live better</title>
+	<meta name="description" content="sidea fitness company move smarter, get stronger, live better">
+	<link rel="canonical" href="https://sideaita.net/">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="SIDEA FITNESS COMPANY">
+	<meta property="og:description" content="Awarness HealthPerformance through movement">
+	<meta property="og:url" content="https://sideaita.net/">
+	<meta property="og:site_name" content="Sidea Fitness Company International">
+	<meta property="article:publisher" content="https://www.facebook.com/sideaita/">
+	<meta property="article:modified_time" content="2021-04-05T09:22:15+00:00">
+	<meta property="og:image" content="images/banner-home-10.jpg">
+	<meta property="og:image:width" content="1980">
+	<meta property="og:image:height" content="600">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="SIDEA FITNESS COMPANY">
+	<meta name="twitter:description" content="Awarness HealthPerformance through movement">
+	<meta name="twitter:image" content="https://sideaita.net/wp-content/uploads/2018/11/9090_2-Model-2-ambientato.jpg">
+	<meta name="twitter:label1" content="Est. reading time">
+	<meta name="twitter:data1" content="6 minutes">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://sideaita.net/#organization","name":"Sidea Srl","url":"https://sideaita.net/","sameAs":["https://www.facebook.com/sideaita/","https://www.instagram.com/sidea_fitness/","https://www.youtube.com/user/FitnessIT/","https://www.pinterest.it/sideafitness/"],"logo":{"@type":"ImageObject","@id":"https://sideaita.net/#logo","inLanguage":"en-US","url":"https://sideaita.net/wp-content/uploads/2018/07/logo-sidea-scritta-nera-sfondo-trasparente.png","contentUrl":"https://sideaita.net/wp-content/uploads/2018/07/logo-sidea-scritta-nera-sfondo-trasparente.png","width":1270,"height":274,"caption":"Sidea Srl"},"image":{"@id":"https://sideaita.net/#logo"}},{"@type":"WebSite","@id":"https://sideaita.net/#website","url":"https://sideaita.net/","name":"Sidea Fitness Company","description":"Move smarter, get stronger, live better","publisher":{"@id":"https://sideaita.net/#organization"},"potentialAction":[{"@type":"SearchAction","target":"https://sideaita.net/?s={search_term_string}","query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"ImageObject","@id":"https://sideaita.net/#primaryimage","inLanguage":"en-US","url":"https://sideaita.net/wp-content/uploads/2018/08/banner-home-10.jpg","contentUrl":"https://sideaita.net/wp-content/uploads/2018/08/banner-home-10.jpg","width":1980,"height":600,"caption":"sidea banner"},{"@type":"WebPage","@id":"https://sideaita.net/#webpage","url":"https://sideaita.net/","name":"Sidea Fitness company move smarter, get stronger, live better","isPartOf":{"@id":"https://sideaita.net/#website"},"about":{"@id":"https://sideaita.net/#organization"},"primaryImageOfPage":{"@id":"https://sideaita.net/#primaryimage"},"datePublished":"2013-12-16T08:57:42+00:00","dateModified":"2021-04-05T09:22:15+00:00","description":"sidea fitness company move smarter, get stronger, live better","breadcrumb":{"@id":"https://sideaita.net/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://sideaita.net/"]}]},{"@type":"BreadcrumbList","@id":"https://sideaita.net/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"WebPage","@id":"https://sideaita.net/","url":"https://sideaita.net/","name":"Home"}}]}]}</script>
+	<meta name="google-site-verification" content="6gphpZ0AEt9HkKhW3Bb-7fTa38rJ0mwUkGseIvzLGXY">
+	<!-- / Yoast SEO Premium plugin. -->
+
+
+<link rel="dns-prefetch" href="//www.google.com">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//s.w.org">
+<link rel="alternate" type="application/rss+xml" title="Sidea Fitness Company International &raquo; Feed" href="https://sideaita.net/feed/">
+<link rel="alternate" type="application/rss+xml" title="Sidea Fitness Company International &raquo; Comments Feed" href="https://sideaita.net/comments/feed/">
+<link rel="stylesheet" id="afadvfront-css-css" href="css/afadvfrontstyle.css" type="text/css" media="all">
+<link rel="stylesheet" id="afreg-front-css-css" href="css/afreg_front.css" type="text/css" media="all">
+<link rel="stylesheet" id="color-spectrum-css-css" href="css/afreg_color_spectrum.css" type="text/css" media="all">
+<link rel="stylesheet" id="select2-css" href="css/select2.css" type="text/css" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="css/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wc-block-vendors-style-css" href="css/vendors-style.css" type="text/css" media="all">
+<link rel="stylesheet" id="wc-block-style-css" href="css/style_2.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" href="css/styles.css" type="text/css" media="all">
+<style id="woocommerce-inline-inline-css" type="text/css">
+.woocommerce form .form-row .required { visibility: visible; }
+</style>
+<link rel="stylesheet" id="flatsome-icons-css" href="css/fl-icons.css" type="text/css" media="all">
+<link rel="stylesheet" id="cf7cf-style-css" href="css/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="flatsome-main-css" href="css/flatsome.css" type="text/css" media="all">
+<link rel="stylesheet" id="flatsome-shop-css" href="css/flatsome-shop.css" type="text/css" media="all">
+<link rel="stylesheet" id="flatsome-style-css" href="css/style_1.css" type="text/css" media="all">
+<link rel="stylesheet" id="flatsome-googlefonts-css" href="css/css.css" type="text/css" media="all">
+<script type="text/javascript" src="js/jquery.min.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="js/afadvfront.js" id="afadvfront-js-js"></script>
+<script type="text/javascript" src="js/afreg_front.js" id="afreg-front-js-js"></script>
+<script type="text/javascript" src="js/afreg_color_spectrum.js" id="color-spectrum-js-js"></script>
+<script type="text/javascript" src="js/api.js" id="Google reCaptcha JS-js"></script>
+<script type="text/javascript" src="js/gtm4wp-form-move-tracker.js" id="gtm4wp-form-move-tracker-js"></script>
+<link rel="https://api.w.org/" href="https://sideaita.net/wp-json/"><link rel="alternate" type="application/json" href="https://sideaita.net/wp-json/wp/v2/pages/74"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://sideaita.net/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://sideaita.net/wp-includes/wlwmanifest.xml"> 
+<meta name="generator" content="WordPress 5.7">
+<meta name="generator" content="WooCommerce 5.1.0">
+<link rel="shortlink" href="https://sideaita.net/">
+<link rel="alternate" type="application/json+oembed" href="https://sideaita.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsideaita.net%2F">
+<link rel="alternate" type="text/xml+oembed" href="https://sideaita.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fsideaita.net%2F&#038;format=xml">
+
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" data-pagespeed-no-defer type="text/javascript">//<![CDATA[
+	var dataLayer_content = {"pagePostType":"frontpage","pagePostType2":"single-page","pagePostAuthor":"riccardo"};
+	dataLayer.push( dataLayer_content );//]]>
+</script>
+<script data-cfasync="false">//<![CDATA[
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.'+'js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5DKH8F8');//]]>
+</script>
+<!-- End Google Tag Manager -->
+<!-- End Google Tag Manager for WordPress by gtm4wp.com --><!--[if IE]><link rel="stylesheet" type="text/css" href="https://sideaita.net/wp-content/themes/flatsome/assets/css/ie-fallback.css"><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.1/html5shiv.js"></script><script>var head = document.getElementsByTagName('head')[0],style = document.createElement('style');style.type = 'text/css';style.styleSheet.cssText = ':before,:after{content:none !important';head.appendChild(style);setTimeout(function(){head.removeChild(style);}, 0);</script><script src="https://sideaita.net/wp-content/themes/flatsome/assets/libs/ie-flexibility.js"></script><![endif]-->	<noscript><style>.woocommerce-product-gallery{ opacity: 1 !important; }</style></noscript>
+	<link rel="icon" href="images/cropped-logo-solo-S-grigio-32x32.jpg" sizes="32x32">
+<link rel="icon" href="images/cropped-logo-solo-S-grigio-192x192.jpg" sizes="192x192">
+<link rel="apple-touch-icon" href="images/cropped-logo-solo-S-grigio-180x180.jpg">
+<meta name="msapplication-TileImage" content="https://sideaita.net/wp-content/uploads/2018/07/cropped-logo-solo-S-grigio-270x270.jpg">
+<style id="custom-css" type="text/css">:root {--primary-color: #5f4d3e;}.full-width .ubermenu-nav, .container, .row{max-width: 1110px}.row.row-collapse{max-width: 1080px}.row.row-small{max-width: 1102.5px}.row.row-large{max-width: 1140px}.header-main{height: 100px}#logo img{max-height: 100px}#logo{width:200px;}.header-top{min-height: 44px}.transparent .header-main{height: 73px}.transparent #logo img{max-height: 73px}.has-transparent + .page-title:first-of-type,.has-transparent + #main > .page-title,.has-transparent + #main > div > .page-title,.has-transparent + #main .page-header-wrapper:first-of-type .page-title{padding-top: 103px;}.transparent .header-wrapper{background-color: #91827a!important;}.transparent .top-divider{display: none;}.header.show-on-scroll,.stuck .header-main{height:70px!important}.stuck #logo img{max-height: 70px!important}.search-form{ width: 60%;}.header-bg-color, .header-wrapper {background-color: #91827a}.header-bottom {background-color: #f1f1f1}.header-main .nav > li > a{line-height: 16px }.stuck .header-main .nav > li > a{line-height: 50px }.header-bottom-nav > li > a{line-height: 16px }@media (max-width: 549px) {.header-main{height: 70px}#logo img{max-height: 70px}}.nav-dropdown{font-size:100%}.header-top{background-color:#000000!important;}.blog-wrapper{background-color: #f7f7f7;}/* Color */.accordion-title.active, .has-icon-bg .icon .icon-inner,.logo a, .primary.is-underline, .primary.is-link, .badge-outline .badge-inner, .nav-outline > li.active> a,.nav-outline >li.active > a, .cart-icon strong,[data-color='primary'], .is-outline.primary{color: #5f4d3e;}/* Color !important */[data-text-color="primary"]{color: #5f4d3e!important;}/* Background Color */[data-text-bg="primary"]{background-color: #5f4d3e;}/* Background */.scroll-to-bullets a,.featured-title, .label-new.menu-item > a:after, .nav-pagination > li > .current,.nav-pagination > li > span:hover,.nav-pagination > li > a:hover,.has-hover:hover .badge-outline .badge-inner,button[type="submit"], .button.wc-forward:not(.checkout):not(.checkout-button), .button.submit-button, .button.primary:not(.is-outline),.featured-table .title,.is-outline:hover, .has-icon:hover .icon-label,.nav-dropdown-bold .nav-column li > a:hover, .nav-dropdown.nav-dropdown-bold > li > a:hover, .nav-dropdown-bold.dark .nav-column li > a:hover, .nav-dropdown.nav-dropdown-bold.dark > li > a:hover, .is-outline:hover, .tagcloud a:hover,.grid-tools a, input[type='submit']:not(.is-form), .box-badge:hover .box-text, input.button.alt,.nav-box > li > a:hover,.nav-box > li.active > a,.nav-pills > li.active > a ,.current-dropdown .cart-icon strong, .cart-icon:hover strong, .nav-line-bottom > li > a:before, .nav-line-grow > li > a:before, .nav-line > li > a:before,.banner, .header-top, .slider-nav-circle .flickity-prev-next-button:hover svg, .slider-nav-circle .flickity-prev-next-button:hover .arrow, .primary.is-outline:hover, .button.primary:not(.is-outline), input[type='submit'].primary, input[type='submit'].primary, input[type='reset'].button, input[type='button'].primary, .badge-inner{background-color: #5f4d3e;}/* Border */.nav-vertical.nav-tabs > li.active > a,.scroll-to-bullets a.active,.nav-pagination > li > .current,.nav-pagination > li > span:hover,.nav-pagination > li > a:hover,.has-hover:hover .badge-outline .badge-inner,.accordion-title.active,.featured-table,.is-outline:hover, .tagcloud a:hover,blockquote, .has-border, .cart-icon strong:after,.cart-icon strong,.blockUI:before, .processing:before,.loading-spin, .slider-nav-circle .flickity-prev-next-button:hover svg, .slider-nav-circle .flickity-prev-next-button:hover .arrow, .primary.is-outline:hover{border-color: #5f4d3e}.nav-tabs > li.active > a{border-top-color: #5f4d3e}.widget_shopping_cart_content .blockUI.blockOverlay:before { border-left-color: #5f4d3e }.woocommerce-checkout-review-order .blockUI.blockOverlay:before { border-left-color: #5f4d3e }/* Fill */.slider .flickity-prev-next-button:hover svg,.slider .flickity-prev-next-button:hover .arrow{fill: #5f4d3e;}body{font-family:"Lato", sans-serif}body{font-weight: 400}.nav > li > a {font-family:"Lato", sans-serif;}.mobile-sidebar-levels-2 .nav > li > ul > li > a {font-family:"Lato", sans-serif;}.nav > li > a {font-weight: 700;}.mobile-sidebar-levels-2 .nav > li > ul > li > a {font-weight: 700;}h1,h2,h3,h4,h5,h6,.heading-font, .off-canvas-center .nav-sidebar.nav-vertical > li > a{font-family: "Lato", sans-serif;}h1,h2,h3,h4,h5,h6,.heading-font,.banner h1,.banner h2{font-weight: 700;}.alt-font{font-family: "Dancing Script", sans-serif;}.header:not(.transparent) .header-nav-main.nav > li > a {color: #ffffff;}.header:not(.transparent) .header-nav-main.nav > li > a:hover,.header:not(.transparent) .header-nav-main.nav > li.active > a,.header:not(.transparent) .header-nav-main.nav > li.current > a,.header:not(.transparent) .header-nav-main.nav > li > a.active,.header:not(.transparent) .header-nav-main.nav > li > a.current{color: #000000;}.header-nav-main.nav-line-bottom > li > a:before,.header-nav-main.nav-line-grow > li > a:before,.header-nav-main.nav-line > li > a:before,.header-nav-main.nav-box > li > a:hover,.header-nav-main.nav-box > li.active > a,.header-nav-main.nav-pills > li > a:hover,.header-nav-main.nav-pills > li.active > a{color:#FFF!important;background-color: #000000;}.has-equal-box-heights .box-image {padding-top: 100%;}@media screen and (min-width: 550px){.products .box-vertical .box-image{min-width: 300px!important;width: 300px!important;}}.footer-2{background-color: #474747}.absolute-footer, html{background-color: #000000}.page-title-small + main .product-container > .row{padding-top:0;}button[name='update_cart'] { display: none; }.label-new.menu-item > a:after{content:"New";}.label-hot.menu-item > a:after{content:"Hot";}.label-sale.menu-item > a:after{content:"Sale";}.label-popular.menu-item > a:after{content:"Popular";}</style>		<style type="text/css" id="wp-custom-css">
+			/* eliminare visualizzazione ordinamento prodotti a dx
+.woocommerce-result-count, .woocommerce-ordering {
+  display: none;
+}
+*/
+
+/*mobile accordion bilancieri*/
+@media only screen and (max-width: 600px) {
+.accordion-title {font-size:13px}
+.accordion-inner{font-size:10px}
+}
+/*desktop accordion bilancieri*/
+@media only screen and (min-width: 600px) {
+	.accordion-title {font-size:15px}
+	.accordion-inner{font-size:12px}
+}
+/*cambio colore badge new*/
+.badge-inner.new-bubble {
+    background-color: #90827a;
+}
+
+/* Hide additional info tab in single product*/
+#tab-additional_information {
+  display: none !important;
+}
+#tab-title-additional_information {
+  display: none;
+}
+/*icona pulsante carrello*/
+.single_add_to_cart_button:before {
+	font-family:'fl-icons';
+	content:"\e90a";
+    font-weight: 300;
+    margin-right: 1em;	
+}
+
+/*format iva inclusa*/
+.woocommerce-price-suffix {
+    font-size: 14px;
+}
+
+/*format simbolo €*/
+.product-summary .woocommerce-Price-currencySymbol {
+    font-size: .75em;
+    vertical-align: unset;
+}
+/*box grey aggiungi al carrello*/
+.sticky-add-to-cart-wrapper{
+	padding: 30px 10px 20px 10px;
+    background-color: #f8f8f8;
+    width: 100%; 
+}
+
+/* Rimozione range-prezzi prodotto variabile & Aggiunta di "a partire da" nel display prodotti*/
+
+.product-type-variable span.woocommerce-Price-amount.amount:nth-of-type(2),
+.product-type-variable small.woocommerce-price-suffix:nth-of-type(2) {
+    display: none;
+}
+
+.product-type-variable span.woocommerce-Price-amount.amount:nth-of-type(1):before {
+    content: "from ";
+}
+.single .single_variation span.woocommerce-Price-amount.amount:nth-of-type(1):before{
+    content: "";
+}
+
+.single .product-type-variable .price-wrapper{
+    display: none;
+}
+
+.logged-in.single .product-type-variable .price-wrapper{
+    display: block;
+}
+
+/* Rimozione Prezzi con iva da visualizzazione di categoria*/
+.tax-product_cat .woocommerce-price-suffix {
+    display: none;
+}
+
+.tax-product_cat span.price {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+a.jump-to-tab {
+		color:black;
+    font-weight: 600;
+	
+}
+
+a.jump-to-tab:hover {
+    color:grey;
+}
+.scroll-to-bullets{
+	background-color: #adb6b8;
+}
+
+
+
+/*************** STICKY MOBILE MENU  
+***************/
+.sticky-mobile-menu {
+position: fixed;
+		bottom:0;
+  	top: 0;
+    left: 0;
+    width: 50%;
+    height: 30%;
+    margin: auto;
+	z-index: 999;
+}
+@media (max-width:768px){
+	.sticky-mobile-menu {
+	display:none;
+	}
+}
+/*eliminare descrizione prodotti variabili*/
+.woocommerce-variation-description{
+		display: none;}
+/*
+.ywcrbp_regular_price{
+	display: none;
+}
+*/
+
+/* Remove Shipping Details */
+
+p.woocommerce-shipping-destination, .woocommerce-shipping-calculator {
+    display: none;
+}
+
+/* Remove Login for testing 
+
+a.nav-top-link.nav-top-not-logged-in.icon.button.circle.is-outline.is-small, .login-to-see-price {
+    display: none;
+}
+
+span.ywcrbp_regular_price {
+    display: none;
+}
+*/
+
+.logged-in span.ywcrbp_regular_price {
+    display: block;
+}
+/*eliminazione compo inc iva*/
+.woocommerce-price-suffix{
+	display: none;
+}
+/*insrimento spazio dopo simbolo €*/
+.product-summary .woocommerce-Price-currencySymbol {
+	letter-spacing: 5px;
+}
+
+		</style>
+		<style id="infinite-scroll-css" type="text/css">.page-load-status,.archive .woocommerce-pagination {display: none;}</style></head>
+
+<body class="home page-template page-template-page-transparent-header-light page-template-page-transparent-header-light-php page page-id-74 theme-flatsome woocommerce-no-js full-width header-shadow lightbox nav-dropdown-has-arrow nav-dropdown-has-shadow nav-dropdown-has-border parallax-mobile">
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="ns.html" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+
+<div id="wrapper">
+
+	
+	<header id="header" class="header transparent has-transparent header-full-width has-sticky sticky-jump">
+		<div class="header-wrapper">
+			<div id="top-bar" class="header-top hide-for-sticky nav-dark flex-has-center">
+    <div class="flex-row container">
+      <div class="flex-col hide-for-medium flex-left">
+          <ul class="nav nav-left medium-nav-center nav-small  nav-divided">
+                        </ul>
+      </div>
+
+      <div class="flex-col hide-for-medium flex-center">
+          <ul class="nav nav-center nav-small  nav-divided">
+              <li class="account-item has-icon
+    ">
+<div class="header-button">
+<a href="https://sideaita.net/my-account/" class="nav-top-link nav-top-not-logged-in icon button circle is-outline is-small" data-open="#login-form-popup">
+    <span>
+    Login     / Register  </span>
+  
+</a>
+
+</div>
+
+</li>
+          </ul>
+      </div>
+
+      <div class="flex-col hide-for-medium flex-right">
+         <ul class="nav top-bar-nav nav-right nav-small  nav-divided">
+              <li id="menu-item-968" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-968 menu-item-design-default"><a title="News Sidea" href="https://sideaita.net/news-sidea/" class="nav-top-link">Sidea News &#8211; Blog</a></li>
+<li id="menu-item-3170" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3170 menu-item-design-default"><a title="Sidea Catalog" href="https://sideaita.net/download-catalog/" class="nav-top-link">Sidea Catalog</a></li>
+<li class="header-newsletter-item has-icon">
+
+<a href="#header-newsletter-signup" class="tooltip is-small" title="Sign up for Newsletter">
+
+      <i class="icon-envelop"></i>
+  
+      <span class="header-newsletter-title hide-for-medium">
+      Newsletter    </span>
+  </a>
+	<div id="header-newsletter-signup" class="lightbox-by-id lightbox-content mfp-hide lightbox-white " style="max-width:700px ;padding:0px">
+		
+  <div class="banner has-hover" id="banner-1787741342">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                        <div class="overlay"></div>            
+	<div class="is-border is-dashed" style="border-color:rgba(255,255,255,.3);border-width:2px 2px 2px 2px;margin:10px;">
+	</div>
+                    </div>
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>               <div id="text-box-1909023766" class="text-box banner-layer x10 md-x10 lg-x10 y50 md-y50 lg-y50 res-text">
+                     <div data-animate="fadeInUp">           <div class="text-box-content text dark">
+              
+              <div class="text-inner text-left">
+                  <h3 class="uppercase">Sign up for Newsletter</h3><p class="lead">Sign up for our mailing list to keep you informed and updated about new products,promotions and events Sidea.  By pressing "Send" you authorize data privacy.  A confirmation of registration will be sent to the email address specified</p><script type="text/javascript" src="js/view_webform_v2.js"></script>              </div>
+           </div>
+       </div>                     
+<style>
+#text-box-1909023766 {
+  width: 60%;
+}
+#text-box-1909023766 .text-box-content {
+  font-size: 100%;
+}
+@media (min-width:550px) {
+  #text-box-1909023766 {
+    width: 50%;
+  }
+}
+</style>
+    </div>
+         </div>
+      </div>
+
+            
+<style>
+#banner-1787741342 {
+  padding-top: 650px;
+}
+#banner-1787741342 .bg.bg-loaded {
+  background-image: url(images/logo-solo-S-grigio-e1534705876820.jpg);
+}
+#banner-1787741342 .overlay {
+  background-color: rgba(0,0,0,.4);
+}
+</style>
+  </div>
+
+	</div>
+	
+	</li>
+<li class="html header-social-icons ml-0">
+	<div class="social-icons follow-icons"><a href="https://www.facebook.com/sideaita/" target="_blank" data-label="Facebook" rel="noopener noreferrer nofollow" class="icon plain facebook tooltip" title="Follow on Facebook"><i class="icon-facebook"></i></a><a href="https://www.instagram.com/sidea_fitness/" target="_blank" rel="noopener noreferrer nofollow" data-label="Instagram" class="icon plain  instagram tooltip" title="Follow on Instagram"><i class="icon-instagram"></i></a><a href="mailto:sidea@sideaita.it" data-label="E-mail" rel="nofollow" class="icon plain  email tooltip" title="Send us an email"><i class="icon-envelop"></i></a><a href="https://www.pinterest.it/sideafitness/" target="_blank" rel="noopener noreferrer nofollow" data-label="Pinterest" class="icon plain  pinterest tooltip" title="Follow on Pinterest"><i class="icon-pinterest"></i></a><a href="https://www.linkedin.com/company/sideafitness/" target="_blank" rel="noopener noreferrer nofollow" data-label="LinkedIn" class="icon plain  linkedin tooltip" title="Follow on LinkedIn"><i class="icon-linkedin"></i></a><a href="https://www.youtube.com/user/FitnessIT/" target="_blank" rel="noopener noreferrer nofollow" data-label="YouTube" class="icon plain  youtube tooltip" title="Follow on YouTube"><i class="icon-youtube"></i></a></div></li>          </ul>
+      </div>
+
+            <div class="flex-col show-for-medium flex-grow">
+          <ul class="nav nav-center nav-small mobile-nav  nav-divided">
+              <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-968 menu-item-design-default"><a title="News Sidea" href="https://sideaita.net/news-sidea/" class="nav-top-link">Sidea News &#8211; Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3170 menu-item-design-default"><a title="Sidea Catalog" href="https://sideaita.net/download-catalog/" class="nav-top-link">Sidea Catalog</a></li>
+          </ul>
+      </div>
+      
+    </div>
+</div>
+<div id="masthead" class="header-main nav-dark toggle-nav-dark">
+      <div class="header-inner flex-row container logo-left" role="navigation">
+
+          <!-- Logo -->
+          <div id="logo" class="flex-col logo">
+            <!-- Header logo -->
+<a href="https://sideaita.net/" title="Sidea Fitness Company International - Move smarter, get stronger, live better" rel="home">
+    <img width="200" height="100" src="images/new-logo-black-small.png" class="header_logo header-logo" alt="Sidea Fitness Company International"><img width="200" height="100" src="images/new-logo-black-small.png" class="header-logo-dark" alt="Sidea Fitness Company International"></a>
+          </div>
+
+          <!-- Mobile Left Elements -->
+          <div class="flex-col show-for-medium flex-left">
+            <ul class="mobile-nav nav nav-left ">
+              <li class="nav-icon has-icon">
+  		<a href="#" data-open="#main-menu" data-pos="left" data-bg="main-menu-overlay" data-color class="is-small" aria-label="Menu" aria-controls="main-menu" aria-expanded="false">
+		
+		  <i class="icon-menu"></i>
+		  		</a>
+	</li>            </ul>
+          </div>
+
+          <!-- Left Elements -->
+          <div class="flex-col hide-for-medium flex-left
+            flex-grow">
+            <ul class="header-nav header-nav-main nav nav-left  nav-line-grow nav-spacing-medium nav-uppercase">
+                          </ul>
+          </div>
+
+          <!-- Right Elements -->
+          <div class="flex-col hide-for-medium flex-right">
+            <ul class="header-nav header-nav-main nav nav-right  nav-line-grow nav-spacing-medium nav-uppercase">
+              <li id="menu-item-223" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-223 menu-item-design-container-width menu-item-has-block has-dropdown"><a title="STRUCTURES" href="#" class="nav-top-link">RACKS &#038; STRUCTURES<i class="icon-angle-down"></i></a><div class="sub-menu nav-dropdown">	<section class="section dark" id="section_130806166">
+		<div class="bg section-bg fill bg-fill bg-loaded bg-loaded">
+
+			
+			
+			
+
+		</div>
+
+		<div class="section-content relative">
+			
+
+<div class="row row-small row-full-width" id="row-989144874">
+
+
+	<div id="col-845850501" class="col medium-6 small-6 large-6">
+		<div class="col-inner box-shadow-1 box-shadow-3-hover">
+			
+			
+
+
+  <div class="banner has-hover bg-glow" id="banner-723973194">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                                    
+                    </div>
+        <div class="banner-layers container">
+            <a class="fill" href="/sidea-structures-functional-calisthenics"><div class="fill banner-link"></div></a>            
+
+   <div id="text-box-1382748687" class="text-box banner-layer x50 md-x50 lg-x50 y95 md-y95 lg-y95 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+
+<h2 class="uppercase"><strong>sidea </strong><strong>RACK &amp; STRUCTURES</strong></h2>
+<a href="/sidea-structures-functional-calisthenics" target="_self" class="button secondary is-larger">
+    <span>MODEL OVERVIEW</span>
+  </a>
+
+
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-1382748687 .text-box-content {
+  background-color: rgba(0, 0, 0, 0.547);
+  font-size: 100%;
+}
+#text-box-1382748687 {
+  width: 100%;
+}
+</style>
+    </div>
+ 
+
+        </div>
+      </div>
+
+            
+<style>
+#banner-723973194 {
+  padding-top: 431px;
+}
+#banner-723973194 .bg.bg-loaded {
+  background-image: url(images/strutture-insieme.jpg);
+}
+#banner-723973194 .bg {
+  background-position: 51% 40%;
+}
+</style>
+  </div>
+
+
+
+		</div>
+			</div>
+
+	
+
+	<div id="col-150873680" class="col medium-2 small-6 large-2">
+		<div class="col-inner">
+			
+			
+
+<div class="row" id="row-524406076">
+
+
+	<div id="col-586834266" class="col small-12 large-12">
+		<div class="col-inner box-shadow-1 box-shadow-3-hover">
+			
+			
+
+
+  <div class="banner has-hover bg-glow" id="banner-2099239058">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                                    
+                    </div>
+        <div class="banner-layers container">
+            <a class="fill" href="/sidea-structures-functional-calisthenics#outrace"><div class="fill banner-link"></div></a>            
+
+   <div id="text-box-983153965" class="text-box banner-layer x5 md-x5 lg-x5 y95 md-y95 lg-y95 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+
+<a href="/sidea-structures-functional-calisthenics#outrace" target="_self" class="button secondary is-xlarge">
+    <span>OUTRACE PACK</span>
+  </a>
+
+
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-983153965 {
+  width: 80%;
+}
+#text-box-983153965 .text-box-content {
+  font-size: 100%;
+}
+</style>
+    </div>
+ 
+
+        </div>
+      </div>
+
+            
+<style>
+#banner-2099239058 {
+  padding-top: 200px;
+}
+#banner-2099239058 .bg.bg-loaded {
+  background-image: url(images/sidea-catalog-outrace-render-1.jpg);
+}
+#banner-2099239058 .bg {
+  background-position: 47% 100%;
+}
+</style>
+  </div>
+
+
+
+		</div>
+			</div>
+
+	
+
+</div>
+<div class="row" id="row-2061658849">
+
+
+	<div id="col-560766952" class="col small-12 large-12">
+		<div class="col-inner box-shadow-1 box-shadow-3-hover">
+			
+			
+
+
+  <div class="banner has-hover bg-glow" id="banner-681697269">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                                    
+                    </div>
+        <div class="banner-layers container">
+            <a class="fill" href="/sidea-structures-functional-calisthenics#functional"><div class="fill banner-link"></div></a>            
+
+   <div id="text-box-423725997" class="text-box banner-layer x5 md-x5 lg-x5 y95 md-y95 lg-y95 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+
+<a href="/sidea-structures-functional-calisthenics#functional" target="_self" class="button secondary is-xlarge">
+    <span>FUNCTIONAL RACK</span>
+  </a>
+
+
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-423725997 {
+  width: 80%;
+}
+#text-box-423725997 .text-box-content {
+  font-size: 100%;
+}
+</style>
+    </div>
+ 
+
+        </div>
+      </div>
+
+            
+<style>
+#banner-681697269 {
+  padding-top: 200px;
+}
+#banner-681697269 .bg.bg-loaded {
+  background-image: url(images/9093-2b.jpg);
+}
+#banner-681697269 .bg {
+  background-position: 47% 40%;
+}
+</style>
+  </div>
+
+
+
+		</div>
+			</div>
+
+	
+
+</div>
+
+		</div>
+			</div>
+
+	
+
+	<div id="col-1419042996" class="col medium-2 small-6 large-2">
+		<div class="col-inner">
+			
+			
+
+<div class="row" id="row-797264414">
+
+
+	<div id="col-692384861" class="col small-12 large-12">
+		<div class="col-inner box-shadow-1 box-shadow-3-hover">
+			
+			
+
+
+  <div class="banner has-hover bg-glow" id="banner-926848274">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                                    
+                    </div>
+        <div class="banner-layers container">
+            <a class="fill" href="/sidea-structures-functional-calisthenics#rackstation"><div class="fill banner-link"></div></a>            
+
+   <div id="text-box-1421133519" class="text-box banner-layer x5 md-x5 lg-x5 y95 md-y95 lg-y95 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+
+<a href="/sidea-structures-functional-calisthenics#rackstation" target="_self" class="button secondary is-xlarge">
+    <span>RACKSTATION PACK</span>
+  </a>
+
+
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-1421133519 {
+  width: 80%;
+}
+#text-box-1421133519 .text-box-content {
+  font-size: 100%;
+}
+</style>
+    </div>
+ 
+
+        </div>
+      </div>
+
+            
+<style>
+#banner-926848274 {
+  padding-top: 200px;
+}
+#banner-926848274 .bg.bg-loaded {
+  background-image: url(images/rack-station-banner-bw.jpg);
+}
+#banner-926848274 .bg {
+  background-position: 33% 38%;
+}
+</style>
+  </div>
+
+
+
+		</div>
+			</div>
+
+	
+
+</div>
+<div class="row" id="row-2017056406">
+
+
+	<div id="col-422317146" class="col small-12 large-12">
+		<div class="col-inner box-shadow-1 box-shadow-3-hover">
+			
+			
+
+
+  <div class="banner has-hover bg-glow" id="banner-1352325767">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                                    
+                    </div>
+        <div class="banner-layers container">
+            <a class="fill" href="/sidea-structures-functional-calisthenics#small-rack"><div class="fill banner-link"></div></a>            
+
+   <div id="text-box-2133085789" class="text-box banner-layer x5 md-x5 lg-x5 y95 md-y95 lg-y95 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+
+<a href="/sidea-structures-functional-calisthenics#small-rack" target="_self" class="button secondary is-xlarge">
+    <span>SMART RACKS</span>
+  </a>
+
+
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-2133085789 {
+  width: 80%;
+}
+#text-box-2133085789 .text-box-content {
+  font-size: 100%;
+}
+</style>
+    </div>
+ 
+
+        </div>
+      </div>
+
+            
+<style>
+#banner-1352325767 {
+  padding-top: 200px;
+}
+#banner-1352325767 .bg.bg-loaded {
+  background-image: url(images/SMART-RACKS-RENDERING.jpg);
+}
+#banner-1352325767 .bg {
+  background-position: 37% 61%;
+}
+</style>
+  </div>
+
+
+
+		</div>
+			</div>
+
+	
+
+</div>
+
+		</div>
+			</div>
+
+	
+
+	<div id="col-1230397543" class="col medium-2 small-6 large-2">
+		<div class="col-inner">
+			
+			
+
+<div class="row" id="row-900811252">
+
+
+	<div id="col-577168202" class="col small-12 large-12">
+		<div class="col-inner box-shadow-1 box-shadow-3-hover">
+			
+			
+
+
+  <div class="banner has-hover bg-glow" id="banner-1297659127">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                                    
+                    </div>
+        <div class="banner-layers container">
+            <a class="fill" href="/sidea-structures-functional-calisthenics#calisthenics"><div class="fill banner-link"></div></a>            
+
+   <div id="text-box-1553214339" class="text-box banner-layer x5 md-x5 lg-x5 y95 md-y95 lg-y95 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+
+<a href="/sidea-structures-functional-calisthenics#rackstation" target="_self" class="button secondary is-xlarge">
+    <span>CALISHTENIC RACK</span>
+  </a>
+
+
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-1553214339 {
+  width: 80%;
+}
+#text-box-1553214339 .text-box-content {
+  font-size: 100%;
+}
+</style>
+    </div>
+ 
+
+        </div>
+      </div>
+
+            
+<style>
+#banner-1297659127 {
+  padding-top: 200px;
+}
+#banner-1297659127 .bg.bg-loaded {
+  background-image: url(images/Calisthenics-rack-model1A.jpg);
+}
+#banner-1297659127 .bg {
+  background-position: 45% 44%;
+}
+</style>
+  </div>
+
+
+
+		</div>
+			</div>
+
+	
+
+</div>
+<div class="row" id="row-654552885">
+
+
+	<div id="col-1592126166" class="col small-12 large-12">
+		<div class="col-inner">
+			
+			
+
+
+  <div class="banner has-hover" id="banner-1731499557">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                        <div class="overlay"></div>            
+                    </div>
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>            
+
+
+        </div>
+      </div>
+
+            
+<style>
+#banner-1731499557 {
+  padding-top: 200px;
+  background-color: rgb(127, 127, 127);
+}
+#banner-1731499557 .overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+</style>
+  </div>
+
+
+
+		</div>
+			</div>
+
+	
+
+</div>
+
+		</div>
+			</div>
+
+	
+
+</div>
+
+		</div>
+
+		
+<style>
+#section_130806166 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+</style>
+	</section>
+	</div></li>
+<li id="menu-item-10157" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10157 menu-item-design-custom-size menu-item-has-block has-dropdown"><a href="#" class="nav-top-link">SIDEA SELECTION<i class="icon-angle-down"></i></a><div class="sub-menu nav-dropdown">	<section class="section dark hide-for-medium" id="section_1110037552">
+		<div class="bg section-bg fill bg-fill bg-loaded bg-loaded">
+
+			
+			
+			
+
+		</div>
+
+		<div class="section-content relative">
+			
+
+
+  
+    <div class="row large-columns-4 medium-columns-3 small-columns-2 row-small has-shadow row-box-shadow-1 row-box-shadow-3-hover">
+          <div class="product-category col" data-animate="fadeInDown">
+            <div class="col-inner">
+              <a href="https://sideaita.net/product-category/balance-training/">                <div class="box box-category has-hover box-normal ">
+                <div class="box-image">
+                  <div class>
+                  <img src="images/duneball-300x300.jpg" alt="Balance training" width="300" height="300">                                                      </div>
+                </div>
+                <div class="box-text text-center is-small">
+                  <div class="box-text-inner">
+                      <h5 class="uppercase header-title">
+                              Balance training                      </h5>
+                                            
+                  </div>
+                </div>
+                </div>
+            </a>            </div>
+            </div>
+                <div class="product-category col" data-animate="fadeInDown">
+            <div class="col-inner">
+              <a href="https://sideaita.net/product-category/calisthenic-training/">                <div class="box box-category has-hover box-normal ">
+                <div class="box-image">
+                  <div class>
+                  <img src="images/calisthneics-category-square-300x300.jpg" alt="Calisthenic training" width="300" height="300">                                                      </div>
+                </div>
+                <div class="box-text text-center is-small">
+                  <div class="box-text-inner">
+                      <h5 class="uppercase header-title">
+                              Calisthenic training                      </h5>
+                                            
+                  </div>
+                </div>
+                </div>
+            </a>            </div>
+            </div>
+                <div class="product-category col" data-animate="fadeInDown">
+            <div class="col-inner">
+              <a href="https://sideaita.net/product-category/functional-training/">                <div class="box box-category has-hover box-normal ">
+                <div class="box-image">
+                  <div class>
+                  <img src="images/selezione-Functional-category-square-300x300.jpg" alt="Functional Training" width="300" height="300">                                                      </div>
+                </div>
+                <div class="box-text text-center is-small">
+                  <div class="box-text-inner">
+                      <h5 class="uppercase header-title">
+                              Functional Training                      </h5>
+                                            
+                  </div>
+                </div>
+                </div>
+            </a>            </div>
+            </div>
+                <div class="product-category col" data-animate="fadeInDown">
+            <div class="col-inner">
+              <a href="https://sideaita.net/product-category/group-activity/">                <div class="box box-category has-hover box-normal ">
+                <div class="box-image">
+                  <div class>
+                  <img src="images/group-300x300.jpg" alt="Group activity" width="300" height="300">                                                      </div>
+                </div>
+                <div class="box-text text-center is-small">
+                  <div class="box-text-inner">
+                      <h5 class="uppercase header-title">
+                              Group activity                      </h5>
+                                            
+                  </div>
+                </div>
+                </div>
+            </a>            </div>
+            </div>
+                <div class="product-category col" data-animate="fadeInDown">
+            <div class="col-inner">
+              <a href="https://sideaita.net/product-category/holistic-training/">                <div class="box box-category has-hover box-normal ">
+                <div class="box-image">
+                  <div class>
+                  <img src="images/selezione-Olistico-category-square-300x300.jpg" alt="Holistic training" width="300" height="300">                                                      </div>
+                </div>
+                <div class="box-text text-center is-small">
+                  <div class="box-text-inner">
+                      <h5 class="uppercase header-title">
+                              Holistic training                      </h5>
+                                            
+                  </div>
+                </div>
+                </div>
+            </a>            </div>
+            </div>
+                <div class="product-category col" data-animate="fadeInDown">
+            <div class="col-inner">
+              <a href="https://sideaita.net/product-category/speed-and-agility-training/">                <div class="box box-category has-hover box-normal ">
+                <div class="box-image">
+                  <div class>
+                  <img src="images/speed-agility-training-300x300.jpg" alt="Speed and Agility training" width="300" height="300">                                                      </div>
+                </div>
+                <div class="box-text text-center is-small">
+                  <div class="box-text-inner">
+                      <h5 class="uppercase header-title">
+                              Speed and Agility training                      </h5>
+                                            
+                  </div>
+                </div>
+                </div>
+            </a>            </div>
+            </div>
+                <div class="product-category col" data-animate="fadeInDown">
+            <div class="col-inner">
+              <a href="https://sideaita.net/product-category/strong-fitness-training/">                <div class="box box-category has-hover box-normal ">
+                <div class="box-image">
+                  <div class>
+                  <img src="images/strong-category-square-300x300.jpg" alt="Strong fitness training" width="300" height="300">                                                      </div>
+                </div>
+                <div class="box-text text-center is-small">
+                  <div class="box-text-inner">
+                      <h5 class="uppercase header-title">
+                              Strong fitness training                      </h5>
+                                            
+                  </div>
+                </div>
+                </div>
+            </a>            </div>
+            </div>
+                <div class="product-category col" data-animate="fadeInDown">
+            <div class="col-inner">
+              <a href="https://sideaita.net/product-category/synthetic-grass-flooring/">                <div class="box box-category has-hover box-normal ">
+                <div class="box-image">
+                  <div class>
+                  <img src="images/9112RM-con-marker-300x300.jpg" alt="Synthetic Grass Flooring" width="300" height="300">                                                      </div>
+                </div>
+                <div class="box-text text-center is-small">
+                  <div class="box-text-inner">
+                      <h5 class="uppercase header-title">
+                              Synthetic Grass Flooring                      </h5>
+                                            
+                  </div>
+                </div>
+                </div>
+            </a>            </div>
+            </div>
+        </div>
+
+
+		</div>
+
+		
+<style>
+#section_1110037552 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+</style>
+	</section>
+	</div><style>#menu-item-10157 > .nav-dropdown {width: 1024px;}</style></li>
+<li id="menu-item-225" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-225 menu-item-design-full-width menu-item-has-block has-dropdown"><a title="PRODUCTS BY CATEGORY" href="#" class="nav-top-link">PRODUCTS BY CATEGORY<i class="icon-angle-down"></i></a><div class="sub-menu nav-dropdown">	<section class="section dark" id="section_1943117975">
+		<div class="bg section-bg fill bg-fill bg-loaded bg-loaded">
+
+			
+			
+			
+
+		</div>
+
+		<div class="section-content relative">
+			
+
+<div class="row row-full-width" id="row-1075968844">
+
+
+	<div id="col-1645271763" class="col medium-2 small-6 large-2">
+		<div class="col-inner">
+			
+			
+
+	<div class="ux-menu stack stack-col justify-start ux-menu--divider-solid">
+		
+
+	<div class="ux-menu-link flex menu-item label-new">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/news-product-trends/">
+			<i class="ux-menu-link__icon text-center icon-expand"></i>			<span class="ux-menu-link__text">
+				New Product &amp; Trend			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/products-code-order/">
+			<i class="ux-menu-link__icon text-center icon-expand"></i>			<span class="ux-menu-link__text">
+				Product code Order			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/">
+			<i class="ux-menu-link__icon text-center icon-expand"></i>			<span class="ux-menu-link__text">
+				Product Categories			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/spare-parts/">
+			<i class="ux-menu-link__icon text-center icon-expand"></i>			<span class="ux-menu-link__text">
+				Spare parts			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-title flex">
+			</div>
+	
+
+	<div class="ux-menu-title flex">
+		Sidea categories	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/si-wheel-core-wheels-abdominal-suspension-band/">
+						<span class="ux-menu-link__text">
+				Abdominal Suspension Band			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/adjustable-bench/">
+						<span class="ux-menu-link__text">
+				Adjustable Bench			</span>
+		</a>
+	</div>
+	
+
+
+	</div>
+	
+
+		</div>
+			</div>
+
+	
+
+	<div id="col-1913405960" class="col medium-2 small-6 large-2">
+		<div class="col-inner">
+			
+			
+
+	<div class="ux-menu stack stack-col justify-start ux-menu--divider-solid">
+		
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/agility-ladder/">
+						<span class="ux-menu-link__text">
+				Agility ladder			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-tag/anklets/">
+						<span class="ux-menu-link__text">
+				Anklet			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/balance-board/">
+						<span class="ux-menu-link__text">
+				Balance Board			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/ballast-jacket-weighted/">
+						<span class="ux-menu-link__text">
+				Ballast jacket weighted			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/barbell-accessories/">
+						<span class="ux-menu-link__text">
+				Barbell Accessories			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/barbell-weightlifting-powerlifting/">
+			<i class="ux-menu-link__icon text-center icon-star"></i>			<span class="ux-menu-link__text">
+				Barbell WL/PL			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/bars/">
+						<span class="ux-menu-link__text">
+				Bars			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/big-tubing/">
+						<span class="ux-menu-link__text">
+				Big Tubing Easy &amp; Power			</span>
+		</a>
+	</div>
+	
+
+
+	</div>
+	
+
+		</div>
+			</div>
+
+	
+
+	<div id="col-1435654432" class="col medium-2 small-6 large-2">
+		<div class="col-inner">
+			
+			
+
+	<div class="ux-menu stack stack-col justify-start ux-menu--divider-solid">
+		
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/carbonate-magnesium-magnesite/">
+						<span class="ux-menu-link__text">
+				Carbonate magnesium			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/collar-spring-disc-plates/">
+						<span class="ux-menu-link__text">
+				Collar &amp; spring			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/combat-fitness-boxing/">
+						<span class="ux-menu-link__text">
+				Combat-Fitness boxing			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/dumbbells/">
+			<i class="ux-menu-link__icon text-center icon-star"></i>			<span class="ux-menu-link__text">
+				Dumbbells			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/elastics-and-bands-fitness/">
+						<span class="ux-menu-link__text">
+				Elastics and bands fitness			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/fitness-balls/">
+						<span class="ux-menu-link__text">
+				Fitness balls			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/flowbag-sandbag/">
+						<span class="ux-menu-link__text">
+				Flowbag Sandbag			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/flying-suspension-training/">
+						<span class="ux-menu-link__text">
+				Flying suspension training			</span>
+		</a>
+	</div>
+	
+
+
+	</div>
+	
+
+		</div>
+			</div>
+
+	
+
+	<div id="col-825940957" class="col medium-2 small-6 large-2">
+		<div class="col-inner">
+			
+			
+
+	<div class="ux-menu stack stack-col justify-start ux-menu--divider-solid">
+		
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/rubber-flooring-platform/">
+						<span class="ux-menu-link__text">
+				Flooring: Rubber &amp; Platform			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/synthetic-grass-flooring/">
+						<span class="ux-menu-link__text">
+				Flooring: Synthetic Grass			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/tatami/">
+						<span class="ux-menu-link__text">
+				Flooring: Tatami			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/foam-roller-eva-polyethylene/">
+						<span class="ux-menu-link__text">
+				Foam Roller Eva-Polyethylene			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/ghd-bench-sissy-squat/">
+						<span class="ux-menu-link__text">
+				Ghd-bench sissy-squat			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/glove/">
+						<span class="ux-menu-link__text">
+				Glove			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/handgrips/">
+						<span class="ux-menu-link__text">
+				Handgrips			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/hip-thrust/">
+						<span class="ux-menu-link__text">
+				Hip Thrust			</span>
+		</a>
+	</div>
+	
+
+
+	</div>
+	
+
+		</div>
+			</div>
+
+	
+
+	<div id="col-1328879261" class="col medium-2 small-12 large-2">
+		<div class="col-inner">
+			
+			
+
+	<div class="ux-menu stack stack-col justify-start ux-menu--divider-solid">
+		
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/kettlebell-strong-competition-and-vinyl/">
+			<i class="ux-menu-link__icon text-center icon-star"></i>			<span class="ux-menu-link__text">
+				Kettlebell Strong &amp; vinyl			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/kit-rack-superpump/">
+						<span class="ux-menu-link__text">
+				Kit-rack SuperPump			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/massage-roller-ball/">
+						<span class="ux-menu-link__text">
+				Massage Roller &amp; Ball			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/mats-yoga-pilates/">
+						<span class="ux-menu-link__text">
+				Mats yoga &amp; Pilates			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/parallettes-push-up/">
+						<span class="ux-menu-link__text">
+				Parallettes &amp; Push-up			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/plates-and-bumper/">
+						<span class="ux-menu-link__text">
+				Plates and bumper			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/rack-tool/">
+						<span class="ux-menu-link__text">
+				Rack tool			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/ring/">
+						<span class="ux-menu-link__text">
+				Ring			</span>
+		</a>
+	</div>
+	
+
+
+	</div>
+	
+
+		</div>
+			</div>
+
+	
+
+	<div id="col-650775677" class="col medium-2 small-12 large-2">
+		<div class="col-inner">
+			
+			
+
+	<div class="ux-menu stack stack-col justify-start ux-menu--divider-solid">
+		
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/ropes-functional-training/">
+						<span class="ux-menu-link__text">
+				Rope Functional training			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/si-club-hammer/">
+						<span class="ux-menu-link__text">
+				Si-Club &amp; Hammer			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/si-wheel-core-wheels-abdominal-suspension-band/">
+						<span class="ux-menu-link__text">
+				Si-Wheel – Core Wheels			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/sled-fitness/">
+						<span class="ux-menu-link__text">
+				Sled Fitness			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/step-plyobox-fitness/">
+						<span class="ux-menu-link__text">
+				Step &amp; Plyobox			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/swedish-wall-bars/">
+						<span class="ux-menu-link__text">
+				Swedish wall bars			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/trampoline/">
+						<span class="ux-menu-link__text">
+				Trampoline			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/product-category/universal-storage-rack/">
+						<span class="ux-menu-link__text">
+				Universal storage rack			</span>
+		</a>
+	</div>
+	
+
+
+	</div>
+	
+
+		</div>
+			</div>
+
+	
+
+</div>
+
+		</div>
+
+		
+<style>
+#section_1943117975 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: -32px;
+}
+</style>
+	</section>
+	
+	<section class="section dark" id="section_435740478">
+		<div class="bg section-bg fill bg-fill bg-loaded bg-loaded">
+
+			
+			
+			
+
+		</div>
+
+		<div class="section-content relative">
+			
+
+<div class="row row-full-width" id="row-1420565661">
+
+
+	<div id="col-979210117" class="col medium-2 small-12 large-2">
+		<div class="col-inner text-center box-shadow-1 box-shadow-2-hover dark">
+			
+			
+
+
+  <div class="banner has-hover bg-overlay-remove" id="banner-2026126345">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                        <div class="overlay"></div>            
+	<div class="is-border" style="border-width:0px 0px 0px 0;">
+	</div>
+                    </div>
+        <div class="banner-layers container">
+            <a class="fill" href="https://sideaita.net/product-category/plates-and-bumper/"><div class="fill banner-link"></div></a>            
+
+   <div id="text-box-1455293058" class="text-box banner-layer x50 md-x50 lg-x50 y85 md-y85 lg-y85 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+
+<a href="https://sideaita.net/product-category/plates-and-bumper/" target="_self" class="button secondary is-larger" style="border-radius:99px;">
+    <span>PLATE & BUMPER</span>
+  </a>
+
+
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-1455293058 {
+  width: 60%;
+}
+#text-box-1455293058 .text-box-content {
+  font-size: 100%;
+}
+</style>
+    </div>
+ 
+
+        </div>
+      </div>
+
+            
+<style>
+#banner-2026126345 {
+  padding-top: 150px;
+}
+#banner-2026126345 .bg.bg-loaded {
+  background-image: url(images/9014-Bilanciere-Training-140-copertina.jpg);
+}
+#banner-2026126345 .overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+#banner-2026126345 .bg {
+  background-position: 53% 55%;
+}
+</style>
+  </div>
+
+
+
+		</div>
+			</div>
+
+	
+
+	<div id="col-2110479991" class="col medium-2 small-12 large-2">
+		<div class="col-inner box-shadow-1 box-shadow-2-hover">
+			
+			
+
+
+  <div class="banner has-hover bg-overlay-remove" id="banner-1343899923">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                        <div class="overlay"></div>            
+                    </div>
+        <div class="banner-layers container">
+            <a class="fill" href="https://sideaita.net/product-category/dumbbells/"><div class="fill banner-link"></div></a>            
+
+   <div id="text-box-352513412" class="text-box banner-layer x50 md-x50 lg-x50 y85 md-y85 lg-y85 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+
+<a href="https://sideaita.net/product-category/dumbbells/" target="_self" class="button secondary is-larger" style="border-radius:99px;">
+    <span>Dumbells</span>
+  </a>
+
+
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-352513412 {
+  width: 60%;
+}
+#text-box-352513412 .text-box-content {
+  font-size: 100%;
+}
+</style>
+    </div>
+ 
+
+        </div>
+      </div>
+
+            
+<style>
+#banner-1343899923 {
+  padding-top: 150px;
+}
+#banner-1343899923 .bg.bg-loaded {
+  background-image: url(images/8904-8950-copertina-Hex-Rubber-Dumbbell-1200x800.jpg);
+}
+#banner-1343899923 .overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+#banner-1343899923 .bg {
+  background-position: 51% 56%;
+}
+</style>
+  </div>
+
+
+
+		</div>
+			</div>
+
+	
+
+	<div id="col-1466424883" class="col medium-2 small-12 large-2">
+		<div class="col-inner box-shadow-1 box-shadow-2-hover">
+			
+			
+
+
+  <div class="banner has-hover bg-overlay-remove" id="banner-1863140085">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                        <div class="overlay"></div>            
+                    </div>
+        <div class="banner-layers container">
+            <a class="fill" href="https://sideaita.net/product-category/mats-yoga-pilates/"><div class="fill banner-link"></div></a>            
+
+   <div id="text-box-586871095" class="text-box banner-layer x50 md-x50 lg-x50 y85 md-y85 lg-y85 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+
+<a href="https://sideaita.net/product-category/mats-yoga-pilates/" target="_self" class="button secondary is-larger" style="border-radius:99px;">
+    <span>mats yoga &pilates</span>
+  </a>
+
+
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-586871095 {
+  width: 72%;
+}
+#text-box-586871095 .text-box-content {
+  font-size: 100%;
+}
+</style>
+    </div>
+ 
+
+        </div>
+      </div>
+
+            
+<style>
+#banner-1863140085 {
+  padding-top: 150px;
+}
+#banner-1863140085 .bg.bg-loaded {
+  background-image: url(images/2499-copertina-Cork-Massage-Roller-1200x800.jpg);
+}
+#banner-1863140085 .overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+#banner-1863140085 .bg {
+  background-position: 51% 56%;
+}
+</style>
+  </div>
+
+
+
+		</div>
+			</div>
+
+	
+
+	<div id="col-751779730" class="col medium-2 small-12 large-2">
+		<div class="col-inner box-shadow-1 box-shadow-2-hover">
+			
+			
+
+
+  <div class="banner has-hover bg-overlay-remove" id="banner-1673649358">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                        <div class="overlay"></div>            
+                    </div>
+        <div class="banner-layers container">
+            <a class="fill" href="https://sideaita.net/product-category/fitness-balls/"><div class="fill banner-link"></div></a>            
+
+   <div id="text-box-2067694859" class="text-box banner-layer x50 md-x50 lg-x50 y85 md-y85 lg-y85 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+
+<a href="https://sideaita.net/product-category/fitness-balls/" target="_self" class="button secondary is-larger" style="border-radius:99px;">
+    <span>FITNESS BALLS</span>
+  </a>
+
+
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-2067694859 {
+  width: 60%;
+}
+#text-box-2067694859 .text-box-content {
+  font-size: 100%;
+}
+</style>
+    </div>
+ 
+
+        </div>
+      </div>
+
+            
+<style>
+#banner-1673649358 {
+  padding-top: 150px;
+}
+#banner-1673649358 .bg.bg-loaded {
+  background-image: url(images/0470-0477-copertina-Smash-D-Ball.jpg);
+}
+#banner-1673649358 .overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+#banner-1673649358 .bg {
+  background-position: 51% 56%;
+}
+</style>
+  </div>
+
+
+
+		</div>
+			</div>
+
+	
+
+	<div id="col-817724176" class="col medium-2 small-12 large-2">
+		<div class="col-inner box-shadow-1 box-shadow-2-hover">
+			
+			
+
+
+  <div class="banner has-hover bg-overlay-remove" id="banner-1221121402">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                        <div class="overlay"></div>            
+                    </div>
+        <div class="banner-layers container">
+            <a class="fill" href="https://sideaita.net/product-category/elastics-and-bands-fitness/"><div class="fill banner-link"></div></a>            
+
+   <div id="text-box-1853153345" class="text-box banner-layer x50 md-x50 lg-x50 y85 md-y85 lg-y85 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+
+<a href="https://sideaita.net/product-category/elastics-and-bands-fitness/" target="_self" class="button secondary is-larger" style="border-radius:99px;">
+    <span>elastics & band</span>
+  </a>
+
+
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-1853153345 {
+  width: 60%;
+}
+#text-box-1853153345 .text-box-content {
+  font-size: 100%;
+}
+</style>
+    </div>
+ 
+
+        </div>
+      </div>
+
+            
+<style>
+#banner-1221121402 {
+  padding-top: 150px;
+}
+#banner-1221121402 .bg.bg-loaded {
+  background-image: url(images/0560-Copertina-Latex-Band.jpg);
+}
+#banner-1221121402 .overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+#banner-1221121402 .bg {
+  background-position: 51% 56%;
+}
+</style>
+  </div>
+
+
+
+		</div>
+			</div>
+
+	
+
+	<div id="col-375212135" class="col medium-2 small-12 large-2">
+		<div class="col-inner box-shadow-1 box-shadow-2-hover">
+			
+			
+
+
+  <div class="banner has-hover bg-overlay-remove" id="banner-1414033424">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                        <div class="overlay"></div>            
+                    </div>
+        <div class="banner-layers container">
+            <a class="fill" href="https://sideaita.net/product-category/sled-fitness/"><div class="fill banner-link"></div></a>            
+
+   <div id="text-box-735146879" class="text-box banner-layer x50 md-x50 lg-x50 y85 md-y85 lg-y85 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+
+<a href="https://sideaita.net/product-category/sled-fitness/" target="_self" class="button secondary is-larger" style="border-radius:99px;">
+    <span>sled fitness</span>
+  </a>
+
+
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-735146879 {
+  width: 60%;
+}
+#text-box-735146879 .text-box-content {
+  font-size: 100%;
+}
+</style>
+    </div>
+ 
+
+        </div>
+      </div>
+
+            
+<style>
+#banner-1414033424 {
+  padding-top: 150px;
+}
+#banner-1414033424 .bg.bg-loaded {
+  background-image: url(images/sled-copertina.jpg);
+}
+#banner-1414033424 .overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+#banner-1414033424 .bg {
+  background-position: 51% 56%;
+}
+</style>
+  </div>
+
+
+
+		</div>
+			</div>
+
+	
+
+</div>
+
+		</div>
+
+		
+<style>
+#section_435740478 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+</style>
+	</section>
+	</div></li>
+<li id="menu-item-10418" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10418 menu-item-design-default"><a title="Gym Design" href="https://sideaita.net/gym-design/" class="nav-top-link">Gym Design</a></li>
+<li id="menu-item-2106" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2106 menu-item-design-custom-size menu-item-has-block has-dropdown"><a title="EDUCATIONAL" href="#" class="nav-top-link">EDUCATIONAL<i class="icon-angle-down"></i></a><div class="sub-menu nav-dropdown">	<section class="section dark" id="section_1180430474">
+		<div class="bg section-bg fill bg-fill bg-loaded bg-loaded">
+
+			
+			
+			
+
+		</div>
+
+		<div class="section-content relative">
+			
+
+<div class="row row-small row-full-width" id="row-276115442">
+
+
+	<div id="col-176923637" class="col small-12 large-12">
+		<div class="col-inner">
+			
+			
+
+	<div class="ux-menu stack stack-col justify-start ux-menu--divider-solid">
+		
+
+	<div class="ux-menu-title flex">
+		Sidea Training	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/instructor-training-certification/">
+			<i class="ux-menu-link__icon text-center icon-plus"></i>			<span class="ux-menu-link__text">
+				Training Certification			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/training-video/">
+			<i class="ux-menu-link__icon text-center icon-youtube"></i>			<span class="ux-menu-link__text">
+				Training Video			</span>
+		</a>
+	</div>
+	
+
+
+	</div>
+	
+
+  <div class="banner has-hover" id="banner-312318027">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                        <div class="overlay"></div>            
+                    </div>
+        <div class="banner-layers container">
+            <a class="fill" href="https://sideaita.net/instructor-training-certification/"><div class="fill banner-link"></div></a>            
+
+
+        </div>
+      </div>
+
+            
+<style>
+#banner-312318027 {
+  padding-top: 200px;
+}
+#banner-312318027 .bg.bg-loaded {
+  background-image: url(images/outrace-training-system.jpg);
+}
+#banner-312318027 .overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+#banner-312318027 .bg {
+  background-position: 53% 18%;
+}
+</style>
+  </div>
+
+
+
+		</div>
+		
+<style>
+#col-176923637 > .col-inner {
+  padding: 7px 0px 0px 0px;
+}
+</style>
+	</div>
+
+	
+
+</div>
+
+		</div>
+
+		
+<style>
+#section_1180430474 {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+</style>
+	</section>
+	</div><style>#menu-item-2106 > .nav-dropdown {width: 400px;}</style></li>
+<li id="menu-item-227" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-227 menu-item-design-custom-size menu-item-has-block has-dropdown"><a title="CONTACTS" href="#" class="nav-top-link">CONTACTS<i class="icon-angle-down"></i></a><div class="sub-menu nav-dropdown">	<section class="section dark" id="section_1128918594">
+		<div class="bg section-bg fill bg-fill bg-loaded bg-loaded">
+
+			
+			
+			
+
+		</div>
+
+		<div class="section-content relative">
+			
+
+<div class="row row-small align-right" style="max-width:500px" id="row-394524111">
+
+
+	<div id="col-679147818" class="col medium-6 small-12 large-6">
+		<div class="col-inner">
+			
+			
+
+	<div class="ux-menu stack stack-col justify-start ux-menu--divider-solid">
+		
+
+	<div class="ux-menu-title flex">
+		Sidea Company	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/about/">
+			<i class="ux-menu-link__icon text-center icon-user-o"></i>			<span class="ux-menu-link__text">
+				About Us			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/contact/">
+			<i class="ux-menu-link__icon text-center icon-envelop"></i>			<span class="ux-menu-link__text">
+				Contact Us			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/virtual-tour/">
+			<i class="ux-menu-link__icon text-center icon-map-pin-fill"></i>			<span class="ux-menu-link__text">
+				Virtual Tour			</span>
+		</a>
+	</div>
+	
+
+	<div class="ux-menu-link flex menu-item">
+		<a class="ux-menu-link__link flex" href="https://sideaita.net/privacy-policy/">
+			<i class="ux-menu-link__icon text-center icon-expand"></i>			<span class="ux-menu-link__text">
+				Privacy Policy			</span>
+		</a>
+	</div>
+	
+
+
+	</div>
+	
+
+		</div>
+			</div>
+
+	
+
+	<div id="col-1472930476" class="col medium-5 small-12 large-5">
+		<div class="col-inner">
+			
+			
+
+	<div class="img has-hover x md-x lg-x y md-y lg-y" id="image_839024269">
+								<div class="img-inner dark">
+			<img width="180" height="300" src="images/menu-dx-sidea4.jpg" class="attachment-original size-original" alt="Sidea" loading="lazy">						
+					</div>
+								
+<style>
+#image_839024269 {
+  width: 90%;
+}
+</style>
+	</div>
+	
+
+
+		</div>
+			</div>
+
+	
+
+</div>
+
+		</div>
+
+		
+<style>
+#section_1128918594 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+</style>
+	</section>
+	</div><style>#menu-item-227 > .nav-dropdown {width: 400px;}</style></li>
+<li class="cart-item has-icon">
+
+	<a href="https://sideaita.net/cart/" class="header-cart-link off-canvas-toggle nav-top-link is-small" data-open="#cart-popup" data-class="off-canvas-cart" title="Cart" data-pos="right">
+
+<span class="header-cart-title">
+   Cart     </span>
+
+    <span class="cart-icon image-icon">
+    <strong>0</strong>
+  </span>
+  </a>
+
+
+
+  <!-- Cart Sidebar Popup -->
+  <div id="cart-popup" class="mfp-hide widget_shopping_cart">
+  <div class="cart-popup-inner inner-padding">
+      <div class="cart-popup-title text-center">
+          <h4 class="uppercase">Cart</h4>
+          <div class="is-divider"></div>
+      </div>
+      <div class="widget_shopping_cart_content">
+          
+
+	<p class="woocommerce-mini-cart__empty-message">No products in the cart.</p>
+
+
+      </div>
+            <div class="cart-sidebar-content relative"></div>  </div>
+  </div>
+
+</li>
+<li class="header-search header-search-lightbox has-icon">
+	<div class="header-button">		<a href="#search-lightbox" aria-label="Search" data-open="#search-lightbox" data-focus="input.search-field" class="icon primary button round is-small">
+		<i class="icon-search" style="font-size:16px;"></i></a>
+		</div>
+		
+	<div id="search-lightbox" class="mfp-hide dark text-center">
+		<div class="searchform-wrapper ux-search-box relative form-flat is-large"><form role="search" method="get" class="searchform" action="https://sideaita.net/">
+	<div class="flex-row relative">
+					<div class="flex-col search-form-categories">
+				<select class="search_categories resize-select mb-0" name="product_cat"><option value selected="selected">All</option><option value="adjustable-bench">Adjustable-Bench</option><option value="agility-ladder">Agility Ladder</option><option value="anklets">Anklets</option><option value="balance-board">Balance board</option><option value="balance-training">Balance training</option><option value="ballast-jacket-weighted">Ballast jacket weighted</option><option value="barbell-accessories">Barbell Accessories</option><option value="barbell-weightlifting-powerlifting">Barbell Weightlifting/Powerlifting</option><option value="bars">Bars</option><option value="big-tubing">Big Tubing</option><option value="calisthenic-training">Calisthenic training</option><option value="carbonate-magnesium-magnesite">Carbonate magnesium</option><option value="collar-spring-disc-plates">Collar &amp; spring</option><option value="combat-fitness-boxing">Combat-Fitness boxing</option><option value="dumbbells">Dumbbells</option><option value="elastics-and-bands-fitness">Elastics and bands fitness</option><option value="fitness-balls">Fitness balls</option><option value="flowbag-sandbag">Flowbag Sandbag</option><option value="flying-suspension-training">Flying suspension training</option><option value="foam-roller-eva-polyethylene">Foam Roller Eva-Polyethylene</option><option value="functional-training">Functional Training</option><option value="ghd-bench-sissy-squat">Ghd-bench sissy-squat</option><option value="glove">Glove</option><option value="group-activity">Group activity</option><option value="handgrips">Handgrips</option><option value="hip-thrust">Hip Thrust</option><option value="holistic-training">Holistic training</option><option value="kettlebell-strong-competition-and-vinyl">Kettlebell Strong Competition &amp; vinyl</option><option value="kit-rack-superpump">Kit-rack SuperPump</option><option value="massage-roller-ball">Massage Roller &amp; Ball</option><option value="mats-yoga-pilates">Mats yoga-pilates</option><option value="news-product-trends">New Product &amp; Trends</option><option value="parallettes-push-up">Parallettes &amp; Push-up</option><option value="plates-and-bumper">Plates and bumper</option><option value="products-code-order">Products in code order</option><option value="rack-structures">Rack &amp; Structures Functional Training</option><option value="rack-tool">Rack tool</option><option value="ring">Ring</option><option value="ropes-functional-training">Ropes functional training</option><option value="rubber-flooring-platform">Rubber Flooring &amp; Platform</option><option value="si-club-hammer">Si-Club &amp; Hammer</option><option value="si-wheel-core-wheels-abdominal-suspension-band">Si-Wheel - Core Wheels &amp; Abdominal Suspension Band</option><option value="sled-fitness">Sled Fitness</option><option value="spare-parts">spare parts</option><option value="speed-and-agility-training">Speed and Agility training</option><option value="step-plyobox-fitness">Step &amp; Plyobox</option><option value="strong-fitness-training">Strong fitness training</option><option value="swedish-wall-bars">Swedish wall bars</option><option value="synthetic-grass-flooring">Synthetic Grass Flooring</option><option value="tatami">Tatami</option><option value="trampoline">Trampoline</option><option value="universal-storage-rack">Universal storage rack</option></select>			</div>
+						<div class="flex-col flex-grow">
+			<label class="screen-reader-text" for="woocommerce-product-search-field-0">Search for:</label>
+			<input type="search" id="woocommerce-product-search-field-0" class="search-field mb-0" placeholder="Sidea search..." value name="s">
+			<input type="hidden" name="post_type" value="product">
+					</div>
+		<div class="flex-col">
+			<button type="submit" value="Search" class="ux-search-submit submit-button secondary button icon mb-0" aria-label="Submit">
+				<i class="icon-search"></i>			</button>
+		</div>
+	</div>
+	<div class="live-search-results text-left z-top"></div>
+</form>
+</div>	</div>
+</li>
+            </ul>
+          </div>
+
+          <!-- Mobile Right Elements -->
+          <div class="flex-col show-for-medium flex-right">
+            <ul class="mobile-nav nav nav-right ">
+              <li class="cart-item has-icon">
+
+      <a href="https://sideaita.net/cart/" class="header-cart-link off-canvas-toggle nav-top-link is-small" data-open="#cart-popup" data-class="off-canvas-cart" title="Cart" data-pos="right">
+  
+    <span class="cart-icon image-icon">
+    <strong>0</strong>
+  </span>
+  </a>
+
+</li>
+            </ul>
+          </div>
+
+      </div>
+     
+            <div class="container"><div class="top-divider full-width"></div></div>
+      </div>
+<div class="header-bg-container fill"><div class="header-bg-image fill"></div><div class="header-bg-color fill"></div></div>		</div>
+	</header>
+
+	
+	<main id="main" class>
+
+		<div class="page-header-excerpt">
+			<p>Sidea Fitness Company<br>
+&#8220;Move smarter, get stronger, live better&#8221;</p>
+		</div>
+		
+<div id="content" role="main">
+			
+				<div class="slider-wrapper relative" id="slider-657729998">
+    <div class="slider slider-nav-circle slider-nav-normal slider-nav-light slider-style-normal" data-flickity-options="{
+            "cellAlign": "center",
+            "imagesLoaded": true,
+            "lazyLoad": 1,
+            "freeScroll": false,
+            "wrapAround": true,
+            "autoPlay": 10000,
+            "pauseAutoPlayOnHover" : true,
+            "prevNextButtons": true,
+            "contain" : true,
+            "adaptiveHeight" : true,
+            "dragThreshold" : 10,
+            "percentPosition": true,
+            "pageDots": false,
+            "rightToLeft": false,
+            "draggable": true,
+            "selectedAttraction": 0.1,
+            "parallax" : 0,
+            "friction": 0.6        }">
+        
+
+  <div class="banner has-hover" id="banner-598231127">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                                    
+                    </div>
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>            
+   <div id="text-box-1220259434" class="text-box banner-layer text-box-circle x50 md-x100 lg-x100 y100 md-y100 lg-y85 res-text">
+                     <div data-animate="fadeInLeft">           <div class="text-box-content text dark">
+              
+	<div class="is-border" style="border-width:0px 0px 0px 0;">
+	</div>
+              <div class="text-inner text-center">
+                  
+<h1>SIDEA INTERNATIONAL</h1>
+<p> </p>
+<p><strong><em>For information or requests please contact us <br>using the form available on the website.</em></strong></p>
+<p>Monday – Friday 9:00 to 12:00 – 14:00 to 16:30<br>Saturday &amp; Sunday: Closed</p>
+              </div>
+           </div>
+       </div>                     
+<style>
+#text-box-1220259434 {
+  margin: 0px 0px 0px -0;
+  width: 88%;
+}
+#text-box-1220259434 .text-box-content {
+  background-color: rgba(44, 44, 44, 0.7);
+  font-size: 100%;
+}
+#text-box-1220259434 .text-inner {
+  padding: 0px 0px 0px 0;
+}
+@media (min-width:550px) {
+  #text-box-1220259434 {
+    width: 54%;
+  }
+}
+@media (min-width:850px) {
+  #text-box-1220259434 {
+    width: 44%;
+  }
+}
+</style>
+    </div>
+ 
+        </div>
+      </div>
+
+            
+<style>
+#banner-598231127 {
+  padding-top: 700px;
+}
+#banner-598231127 .bg.bg-loaded {
+  background-image: url(images/9045-1-Olympic-Bar-Support-Pro-copertina.jpg);
+}
+#banner-598231127 .bg {
+  background-position: 16% 57%;
+}
+</style>
+  </div>
+
+
+     </div>
+
+     <div class="loading-spin dark large centered"></div>
+
+     	</div>
+
+
+	<div id="gap-866533940" class="gap-element clearfix" style="display:block; height:auto;">
+		
+<style>
+#gap-866533940 {
+  padding-top: 20px;
+}
+</style>
+	</div>
+	
+	<section class="section dark" id="section_1299543852">
+		<div class="bg section-bg fill bg-fill bg-loaded bg-loaded">
+
+			
+			
+			
+	<div class="is-border" style="border-width:0px 0px 0px 0px;margin:0px 0px 0px 0px;">
+	</div>
+
+		</div>
+
+		<div class="section-content relative">
+			
+
+  
+    <div class="row large-columns-5 medium-columns-3 small-columns-2 row-small row-full-width has-shadow row-box-shadow-2 row-box-shadow-3-hover slider row-slider slider-nav-reveal slider-nav-light slider-nav-push" data-flickity-options="{"imagesLoaded": true, "groupCells": "100%", "dragThreshold" : 5, "cellAlign": "left","wrapAround": true,"prevNextButtons": true,"percentPosition": true,"pageDots": false, "rightToLeft": false, "autoPlay" : false}">
+
+          <div class="product-category col">
+            <div class="col-inner">
+              <a href="https://sideaita.net/product-category/dumbbells/">                <div class="box box-category has-hover box-bounce ">
+                <div class="box-image">
+                  <div class>
+                  <img src="images/manubri-category-square-300x300.jpg" alt="Dumbbells" width="300" height="300">                                                      </div>
+                </div>
+                <div class="box-text text-center is-small">
+                  <div class="box-text-inner">
+                      <h5 class="uppercase header-title">
+                              Dumbbells                      </h5>
+                                            <p class="is-xsmall uppercase count ">
+	                      4 Products                      </p>
+                                            
+                  </div>
+                </div>
+                </div>
+            </a>            </div>
+            </div>
+                <div class="product-category col">
+            <div class="col-inner">
+              <a href="https://sideaita.net/product-category/fitness-balls/">                <div class="box box-category has-hover box-bounce ">
+                <div class="box-image">
+                  <div class>
+                  <img src="images/woman-training-video-1-300x300.jpg" alt="Fitness balls" width="300" height="300">                                                      </div>
+                </div>
+                <div class="box-text text-center is-small">
+                  <div class="box-text-inner">
+                      <h5 class="uppercase header-title">
+                              Fitness balls                      </h5>
+                                            <p class="is-xsmall uppercase count ">
+	                      20 Products                      </p>
+                                            
+                  </div>
+                </div>
+                </div>
+            </a>            </div>
+            </div>
+                <div class="product-category col">
+            <div class="col-inner">
+              <a href="https://sideaita.net/product-category/ghd-bench-sissy-squat/">                <div class="box box-category has-hover box-bounce ">
+                <div class="box-image">
+                  <div class>
+                  <img src="images/cat-GHD-category-square-300x300.jpg" alt="Ghd-bench sissy-squat" width="300" height="300">                                                      </div>
+                </div>
+                <div class="box-text text-center is-small">
+                  <div class="box-text-inner">
+                      <h5 class="uppercase header-title">
+                              Ghd-bench sissy-squat                      </h5>
+                                            <p class="is-xsmall uppercase count ">
+	                      2 Products                      </p>
+                                            
+                  </div>
+                </div>
+                </div>
+            </a>            </div>
+            </div>
+                <div class="product-category col">
+            <div class="col-inner">
+              <a href="https://sideaita.net/product-category/calisthenic-training/">                <div class="box box-category has-hover box-bounce ">
+                <div class="box-image">
+                  <div class>
+                  <img src="images/calisthneics-category-square-300x300.jpg" alt="Calisthenic training" width="300" height="300">                                                      </div>
+                </div>
+                <div class="box-text text-center is-small">
+                  <div class="box-text-inner">
+                      <h5 class="uppercase header-title">
+                              Calisthenic training                      </h5>
+                                            <p class="is-xsmall uppercase count ">
+	                      22 Products                      </p>
+                                            
+                  </div>
+                </div>
+                </div>
+            </a>            </div>
+            </div>
+                <div class="product-category col">
+            <div class="col-inner">
+              <a href="https://sideaita.net/product-category/synthetic-grass-flooring/">                <div class="box box-category has-hover box-bounce ">
+                <div class="box-image">
+                  <div class>
+                  <img src="images/9112RM-con-marker-300x300.jpg" alt="Synthetic Grass Flooring" width="300" height="300">                                                      </div>
+                </div>
+                <div class="box-text text-center is-small">
+                  <div class="box-text-inner">
+                      <h5 class="uppercase header-title">
+                              Synthetic Grass Flooring                      </h5>
+                                            <p class="is-xsmall uppercase count ">
+	                      4 Products                      </p>
+                                            
+                  </div>
+                </div>
+                </div>
+            </a>            </div>
+            </div>
+        </div>
+		</div>
+
+		
+<style>
+#section_1299543852 {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: rgb(212, 210, 209);
+}
+</style>
+	</section>
+	
+	<div id="gap-2031513251" class="gap-element clearfix" style="display:block; height:auto;">
+		
+<style>
+#gap-2031513251 {
+  padding-top: 20px;
+}
+</style>
+	</div>
+	
+<div class="row row-collapse row-full-width" id="row-689385141">
+
+	<div id="col-1676313205" class="col medium-4 small-12 large-4">
+		<div class="col-inner">
+			
+			
+
+  <div class="banner has-hover" id="banner-107463639">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                        <div class="overlay"></div>            
+                    </div>
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>            
+   <div id="text-box-1288061052" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+<h2 class="uppercase"><strong>NEW Products &amp; Trends</strong></h2>
+<a href="https://sideaita.net/product-category/news-product-trends/" target="_self" class="button white is-underline is-larger expand" style="border-radius:99px;">
+    <span>More</span>
+  <i class="icon-angle-right"></i></a>
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-1288061052 {
+  width: 65%;
+}
+#text-box-1288061052 .text-box-content {
+  font-size: 100%;
+}
+</style>
+    </div>
+ 
+        </div>
+      </div>
+
+            
+<style>
+#banner-107463639 {
+  padding-top: 150px;
+  background-color: rgb(118, 118, 118);
+}
+#banner-107463639 .overlay {
+  background-color: rgba(0, 0, 0, 0.12);
+}
+</style>
+  </div>
+
+
+		</div>
+			</div>
+
+	
+
+	<div id="col-1537401351" class="col medium-4 small-12 large-4">
+		<div class="col-inner">
+			
+			
+
+  <div class="banner has-hover" id="banner-1534025739">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                        <div class="overlay"></div>            
+                    </div>
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>            
+   <div id="text-box-892154123" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+<h2 class="uppercase" style="text-align: center;"><strong>Product Catalog</strong></h2>
+<a href="https://sideaita.net/product-category/" target="_self" class="button white is-underline is-larger expand" style="border-radius:99px;">
+    <span>more</span>
+  <i class="icon-angle-right"></i></a>
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-892154123 {
+  width: 70%;
+}
+#text-box-892154123 .text-box-content {
+  font-size: 100%;
+}
+</style>
+    </div>
+ 
+        </div>
+      </div>
+
+            
+<style>
+#banner-1534025739 {
+  padding-top: 150px;
+  background-color: rgb(0,0,0);
+}
+#banner-1534025739 .overlay {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+</style>
+  </div>
+
+
+		</div>
+			</div>
+
+	
+
+	<div id="col-1318706891" class="col medium-4 small-12 large-4">
+		<div class="col-inner">
+			
+			
+
+  <div class="banner has-hover" id="banner-2110568838">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                        <div class="overlay"></div>            
+                    </div>
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>            
+   <div id="text-box-490500338" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
+                                <div class="text-box-content text ">
+              
+              <div class="text-inner text-center">
+                  
+<h2 class="uppercase" style="text-align: center;"><span style="color: #ffffff;"><strong>Training Video Section</strong></span></h2>
+<a href="https://sideaita.net/training-video/" target="_self" class="button white is-underline is-larger expand" style="border-radius:99px;">
+    <span>more</span>
+  </a>
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-490500338 {
+  width: 69%;
+}
+#text-box-490500338 .text-box-content {
+  font-size: 100%;
+}
+</style>
+    </div>
+ 
+        </div>
+      </div>
+
+            
+<style>
+#banner-2110568838 {
+  padding-top: 150px;
+  background-color: rgb(125, 125, 125);
+}
+#banner-2110568838 .overlay {
+  background-color: rgba(0, 0, 0, 0.13);
+}
+</style>
+  </div>
+
+
+		</div>
+			</div>
+
+	
+</div>
+<div class="row align-center" id="row-1941173678">
+
+	<div id="col-1132595923" class="col medium-7 small-12 large-7">
+		<div class="col-inner text-center">
+			
+			
+<h1 class="uppercase"><span style="font-size: 160%;">sidea fitness company</span></h1>
+<h2>&#8220;move smarter, get stronger, live better&#8221;</h2>
+<a href="https://sideaita.net/about/" target="_self" class="button primary is-underline is-small" style="border-radius:99px;">
+    <span>About us</span>
+  </a>
+
+<a href="https://sideaita.net/contact/" target="_self" class="button primary is-small">
+    <span>Where we are</span>
+  </a>
+
+		</div>
+		
+<style>
+#col-1132595923 > .col-inner {
+  padding: 40px 0px 0px 0px;
+}
+</style>
+	</div>
+
+	
+</div>
+<div class="row row-collapse row-full-width" id="row-1185801987">
+
+	<div id="col-1727080896" class="col medium-9 small-12 large-9">
+		<div class="col-inner">
+			
+			
+
+  <div class="banner has-hover bg-overlay-remove-50 hide-for-small" id="banner-79143380">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                                    
+                    </div>
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>            
+        </div>
+      </div>
+
+            
+<style>
+#banner-79143380 {
+  padding-top: 170px;
+}
+#banner-79143380 .bg.bg-loaded {
+  background-image: url(images/kettlebell-competition-sidea-1.jpg);
+}
+#banner-79143380 .bg {
+  background-position: 49% 21%;
+}
+@media (min-width:550px) {
+  #banner-79143380 {
+    padding-top: 350px;
+  }
+}
+</style>
+  </div>
+
+
+		</div>
+			</div>
+
+	
+
+	<div id="col-408142808" class="col medium-3 small-12 large-3 small-col-first">
+		<div class="col-inner">
+			
+			
+
+  <div class="banner has-hover" id="banner-1726331357">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                        <div class="overlay"></div>            
+                    </div>
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>            
+   <div id="text-box-1941583212" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+<h2 class="uppercase"><span style="color: #ffffff; font-size: 120%;"><strong>StRong Fitness training</strong></span></h2>
+<h3><span style="color: #ffffff; font-size: 120%;">Train harder, be better, get stronger</span></h3>
+<a href="https://sideaita.net/product-category/strong-fitness-training/" target="_self" class="button white is-underline is-xxlarge expand" style="border-radius:99px;">
+    <span>Read More</span>
+  </a>
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-1941583212 {
+  width: 60%;
+}
+#text-box-1941583212 .text-box-content {
+  font-size: 100%;
+}
+</style>
+    </div>
+ 
+        </div>
+      </div>
+
+            
+<style>
+#banner-1726331357 {
+  padding-top: 350px;
+  background-color: rgb(0,0,0);
+}
+#banner-1726331357 .overlay {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+</style>
+  </div>
+
+
+		</div>
+			</div>
+
+	
+</div>
+<div class="text-center"><div class="is-divider divider clearfix" style="max-width:50px;height:2px;"></div></div>
+<div class="row row-collapse row-full-width" id="row-1494480371">
+
+	<div id="col-813451501" class="col small-12 large-12">
+		<div class="col-inner">
+			
+			
+
+  <div class="banner has-hover bg-overlay-remove-50" id="banner-291295415">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                                    
+                    </div>
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>            
+   <div id="text-box-2000714309" class="text-box banner-layer x50 md-x50 lg-x50 y95 md-y95 lg-y95 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+<h2 style="text-align: center;">RACKSTATION</h2>
+<h3 style="text-align: center;">Expand your possibilities</h3>
+	<div id="gap-1820786592" class="gap-element clearfix" style="display:block; height:auto;">
+		
+<style>
+#gap-1820786592 {
+  padding-top: 10px;
+}
+</style>
+	</div>
+	
+<a href="https://sideaita.net/product-category/rackstation/" target="_self" class="button white is-underline is-xlarge expand">
+    <span>Read More!</span>
+  </a>
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-2000714309 .text-box-content {
+  background-color: rgba(11, 11, 11, 0.4);
+  font-size: 100%;
+}
+#text-box-2000714309 {
+  width: 66%;
+}
+@media (min-width:550px) {
+  #text-box-2000714309 {
+    width: 36%;
+  }
+}
+</style>
+    </div>
+ 
+        </div>
+      </div>
+
+            
+<style>
+#banner-291295415 {
+  padding-top: 370px;
+}
+#banner-291295415 .bg.bg-loaded {
+  background-image: url(images/rack-station-banner-bw-new3.jpg);
+}
+#banner-291295415 .bg {
+  background-position: 50% 93%;
+}
+</style>
+  </div>
+
+
+		</div>
+			</div>
+
+	
+</div>
+<div class="text-center"><div class="is-divider divider clearfix" style="max-width:50px;height:2px;"></div></div>
+<div class="row row-collapse row-full-width" id="row-1820734775">
+
+	<div id="col-652008140" class="col medium-8 small-12 large-8">
+		<div class="col-inner">
+			
+			
+
+  <div class="banner has-hover bg-overlay-remove hide-for-small" id="banner-437675493">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                                    
+                    </div>
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>            
+        </div>
+      </div>
+
+            
+<style>
+#banner-437675493 {
+  padding-top: 170px;
+}
+#banner-437675493 .bg.bg-loaded {
+  background-image: url(images/selezione-Functional1.jpg);
+}
+#banner-437675493 .bg {
+  background-position: 37% 56%;
+}
+@media (min-width:550px) {
+  #banner-437675493 {
+    padding-top: 350px;
+  }
+}
+</style>
+  </div>
+
+
+		</div>
+			</div>
+
+	
+
+	<div id="col-1644218977" class="col medium-4 small-12 large-4 small-col-first">
+		<div class="col-inner">
+			
+			
+
+  <div class="banner has-hover" id="banner-754938373">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                                    
+                    </div>
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>            
+   <div id="text-box-1482613406" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+<h2 class="uppercase"><span style="color: #ffffff; font-size: 120%;"><strong>Functional training</strong></span></h2>
+<h3><span style="color: #ffffff; font-size: 120%;">Reach your potential through movement</span></h3>
+<a href="https://sideaita.net/product-category/functional-training/" target="_self" class="button white is-underline is-xxlarge expand" style="border-radius:99px;">
+    <span>Read More!</span>
+  </a>
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-1482613406 {
+  width: 78%;
+}
+#text-box-1482613406 .text-box-content {
+  font-size: 100%;
+}
+@media (min-width:550px) {
+  #text-box-1482613406 {
+    width: 60%;
+  }
+}
+</style>
+    </div>
+ 
+        </div>
+      </div>
+
+            
+<style>
+#banner-754938373 {
+  padding-top: 350px;
+  background-color: rgb(0, 0, 0);
+}
+</style>
+  </div>
+
+
+		</div>
+			</div>
+
+	
+</div>
+<div class="text-center"><div class="is-divider divider clearfix" style="max-width:50px;height:2px;"></div></div>
+<div class="row row-collapse row-full-width" id="row-1493954418">
+
+	<div id="col-301962759" class="col small-12 large-12">
+		<div class="col-inner">
+			
+			
+
+  <div class="banner has-hover bg-overlay-remove" id="banner-964122814">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                                    
+                    </div>
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>            
+   <div id="text-box-1277733665" class="text-box banner-layer x5 md-x5 lg-x5 y50 md-y50 lg-y50 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+<h2><span style="font-size: 130%;">BARBELL</span></h2>
+<h3><span style="font-size: 130%;">Lift the quality</span></h3>
+<a href="https://sideaita.net/product-category/barbell-weightlifting-powerlifting/" target="_self" class="button white is-underline is-xlarge expand">
+    <span>Read More!</span>
+  </a>
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-1277733665 .text-box-content {
+  background-color: rgba(4, 4, 4, 0.45);
+  font-size: 100%;
+}
+#text-box-1277733665 {
+  width: 56%;
+}
+@media (min-width:550px) {
+  #text-box-1277733665 {
+    width: 32%;
+  }
+}
+</style>
+    </div>
+ 
+        </div>
+      </div>
+
+            
+<style>
+#banner-964122814 {
+  padding-top: 370px;
+}
+#banner-964122814 .bg.bg-loaded {
+  background-image: url(images/bilancieri.jpg);
+}
+#banner-964122814 .bg {
+  background-position: 54% 43%;
+}
+</style>
+  </div>
+
+
+		</div>
+			</div>
+
+	
+</div>
+<div class="text-center"><div class="is-divider divider clearfix" style="max-width:50px;height:2px;"></div></div>
+<div class="row row-collapse row-full-width" id="row-1700841780">
+
+	<div id="col-55456675" class="col medium-6 small-12 large-6">
+		<div class="col-inner">
+			
+			
+
+  <div class="banner has-hover bg-overlay-remove-50 has-parallax" id="banner-858065302">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill" data-parallax="-3" data-parallax-container=".banner" data-parallax-background>
+            <div class="bg fill bg-fill bg-loaded"></div>
+                                    
+                    </div>
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>            
+   <div id="text-box-1934510874" class="text-box banner-layer x50 md-x25 lg-x25 y90 md-y85 lg-y85 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+<h2 class="uppercase">Calisthenic training</h2>
+<h3>The ultimate tools and racks for your calisthenics workout plan</h3>
+	<div id="gap-350846581" class="gap-element clearfix" style="display:block; height:auto;">
+		
+<style>
+#gap-350846581 {
+  padding-top: 10px;
+}
+</style>
+	</div>
+	
+<a href="https://sideaita.net/product-category/calisthenic-training/" target="_self" class="button white is-underline is-xlarge expand">
+    <span>Read More!</span>
+  </a>
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-1934510874 .text-box-content {
+  background-color: rgba(152, 152, 152, 0.38);
+  font-size: 100%;
+}
+#text-box-1934510874 {
+  width: 84%;
+}
+@media (min-width:550px) {
+  #text-box-1934510874 {
+    width: 44%;
+  }
+}
+</style>
+    </div>
+ 
+        </div>
+      </div>
+
+            
+<style>
+#banner-858065302 {
+  padding-top: 350px;
+}
+#banner-858065302 .bg.bg-loaded {
+  background-image: url(images/calisthenics-training.jpg);
+}
+#banner-858065302 .bg {
+  background-position: 55% 47%;
+}
+</style>
+  </div>
+
+
+		</div>
+			</div>
+
+	
+
+	<div id="col-1318110478" class="col medium-6 small-12 large-6">
+		<div class="col-inner">
+			
+			
+
+  <div class="banner has-hover bg-overlay-remove" id="banner-1923673532">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                                    
+                    </div>
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>            
+   <div id="text-box-332910476" class="text-box banner-layer x50 md-x50 lg-x50 y80 md-y80 lg-y80 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+<h2>ELASTICS</h2>
+<h3>Experience the unrivalled selection of elastics</h3>
+	<div id="gap-2021291146" class="gap-element clearfix" style="display:block; height:auto;">
+		
+<style>
+#gap-2021291146 {
+  padding-top: 10px;
+}
+</style>
+	</div>
+	
+<a href="https://sideaita.net/product-category/elastics-and-bands-fitness/" target="_self" class="button white is-underline is-xlarge expand">
+    <span>Read More!</span>
+  </a>
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-332910476 .text-box-content {
+  background-color: rgba(138, 138, 138, 0.56);
+  font-size: 100%;
+}
+#text-box-332910476 {
+  width: 75%;
+}
+@media (min-width:550px) {
+  #text-box-332910476 {
+    width: 60%;
+  }
+}
+</style>
+    </div>
+ 
+        </div>
+      </div>
+
+            
+<style>
+#banner-1923673532 {
+  padding-top: 350px;
+  background-color: rgb(37, 37, 37);
+}
+#banner-1923673532 .bg.bg-loaded {
+  background-image: url(images/0516-800-a.jpg);
+}
+#banner-1923673532 .bg {
+  background-position: 53% 10%;
+}
+</style>
+  </div>
+
+
+		</div>
+			</div>
+
+	
+</div>
+<div class="text-center"><div class="is-divider divider clearfix" style="max-width:50px;height:2px;"></div></div>
+<div class="row row-collapse row-full-width" id="row-2055128548">
+
+	<div id="col-1011827526" class="col medium-6 small-12 large-6">
+		<div class="col-inner">
+			
+			
+
+  <div class="banner has-hover bg-overlay-remove has-parallax" id="banner-1714078817">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill" data-parallax="-3" data-parallax-container=".banner" data-parallax-background>
+            <div class="bg fill bg-fill bg-loaded"></div>
+                                    
+                    </div>
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>            
+   <div id="text-box-574452296" class="text-box banner-layer x50 md-x50 lg-x50 y50 md-y50 lg-y50 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+<h2>SPEED &amp; AGILITY TRAINING</h2>
+<h3>Improve your athletic preparation</h3>
+	<div id="gap-997264788" class="gap-element clearfix" style="display:block; height:auto;">
+		
+<style>
+#gap-997264788 {
+  padding-top: 10px;
+}
+</style>
+	</div>
+	
+<a href="https://sideaita.net/product-category/speed-and-agility-training/" target="_self" class="button white is-underline is-larger expand">
+    <span>Read More!</span>
+  </a>
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-574452296 {
+  width: 84%;
+}
+#text-box-574452296 .text-box-content {
+  font-size: 100%;
+}
+@media (min-width:550px) {
+  #text-box-574452296 {
+    width: 51%;
+  }
+}
+</style>
+    </div>
+ 
+        </div>
+      </div>
+
+            
+<style>
+#banner-1714078817 {
+  padding-top: 350px;
+}
+#banner-1714078817 .bg.bg-loaded {
+  background-image: url(images/speed-agility-training.jpg);
+}
+#banner-1714078817 .bg {
+  background-position: 37% 7%;
+}
+</style>
+  </div>
+
+
+		</div>
+			</div>
+
+	
+
+	<div id="col-915800679" class="col medium-6 small-12 large-6">
+		<div class="col-inner">
+			
+			
+
+  <div class="banner has-hover bg-overlay-remove-50" id="banner-879491578">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                                    
+                    </div>
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>            
+   <div id="text-box-2073717575" class="text-box banner-layer x50 md-x50 lg-x50 y95 md-y90 lg-y90 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+<h2>HOLISTIC TRAINING</h2>
+<h3>Beyond Yoga and Pilates</h3>
+	<div id="gap-132235318" class="gap-element clearfix" style="display:block; height:auto;">
+		
+<style>
+#gap-132235318 {
+  padding-top: 10px;
+}
+</style>
+	</div>
+	
+<a href="https://sideaita.net/product-category/holistic-training/" target="_self" class="button white is-underline is-xlarge expand">
+    <span>read more!</span>
+  </a>
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-2073717575 .text-box-content {
+  background-color: rgba(129, 129, 129, 0.53);
+  font-size: 100%;
+}
+#text-box-2073717575 {
+  width: 75%;
+}
+@media (min-width:550px) {
+  #text-box-2073717575 {
+    width: 60%;
+  }
+}
+</style>
+    </div>
+ 
+        </div>
+      </div>
+
+            
+<style>
+#banner-879491578 {
+  padding-top: 350px;
+  background-color: rgb(37, 37, 37);
+}
+#banner-879491578 .bg.bg-loaded {
+  background-image: url(images/cat.-tappetino.jpg);
+}
+#banner-879491578 .bg {
+  background-position: 48% 36%;
+}
+</style>
+  </div>
+
+
+		</div>
+			</div>
+
+	
+</div>
+<div class="text-center"><div class="is-divider divider clearfix" style="max-width:50px;height:2px;"></div></div>
+<div class="row row-collapse row-full-width" id="row-1775607455">
+
+	<div id="col-543128422" class="col medium-6 small-12 large-6">
+		<div class="col-inner">
+			
+			
+
+  <div class="banner has-hover bg-overlay-remove-50" id="banner-1637686064">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill">
+            <div class="bg fill bg-fill bg-loaded"></div>
+                                    
+                    </div>
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>            
+   <div id="text-box-1658870289" class="text-box banner-layer x50 md-x50 lg-x50 y90 md-y80 lg-y80 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-center">
+                  
+<h2>BALANCE TRAINING</h2>
+<h3>Proprioceptive solutions to train your stability</h3>
+<a href="https://sideaita.net/product-category/balance-training/" target="_self" class="button white is-underline is-xlarge expand">
+    <span>read more!</span>
+  </a>
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-1658870289 .text-box-content {
+  background-color: rgba(20, 20, 20, 0.53);
+  font-size: 100%;
+}
+#text-box-1658870289 {
+  width: 60%;
+}
+</style>
+    </div>
+ 
+        </div>
+      </div>
+
+            
+<style>
+#banner-1637686064 {
+  padding-top: 350px;
+}
+#banner-1637686064 .bg.bg-loaded {
+  background-image: url(images/balance-training.jpg);
+}
+#banner-1637686064 .bg {
+  background-position: 54% 37%;
+}
+</style>
+  </div>
+
+
+		</div>
+			</div>
+
+	
+
+	<div id="col-2018408185" class="col medium-6 small-12 large-6">
+		<div class="col-inner">
+			
+			
+
+  <div class="banner has-hover bg-overlay-remove has-parallax" id="banner-1944830403">
+          <div class="banner-inner fill">
+        <div class="banner-bg fill" data-parallax="-3" data-parallax-container=".banner" data-parallax-background>
+            <div class="bg fill bg-fill bg-loaded"></div>
+                        <div class="overlay"></div>            
+                    </div>
+        <div class="banner-layers container">
+            <div class="fill banner-link"></div>            
+   <div id="text-box-1107939080" class="text-box banner-layer x10 md-x10 lg-x10 y85 md-y85 lg-y85 res-text">
+                                <div class="text-box-content text dark">
+              
+              <div class="text-inner text-right">
+                  
+<h2>GROUP FITNESS ACTIVITY</h2>
+<h3>Make it fun, do it together</h3>
+	<div id="gap-1998006267" class="gap-element clearfix" style="display:block; height:auto;">
+		
+<style>
+#gap-1998006267 {
+  padding-top: 10px;
+}
+</style>
+	</div>
+	
+<a href="https://sideaita.net/product-category/group-activity/" target="_self" class="button white is-underline is-larger expand">
+    <span>Read More!</span>
+  </a>
+
+              </div>
+           </div>
+                            
+<style>
+#text-box-1107939080 {
+  width: 43%;
+}
+#text-box-1107939080 .text-box-content {
+  font-size: 100%;
+}
+@media (min-width:550px) {
+  #text-box-1107939080 {
+    width: 33%;
+  }
+}
+</style>
+    </div>
+ 
+        </div>
+      </div>
+
+            
+<style>
+#banner-1944830403 {
+  padding-top: 350px;
+}
+#banner-1944830403 .bg.bg-loaded {
+  background-image: url(images/group-activity.jpg);
+}
+#banner-1944830403 .overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#banner-1944830403 .bg {
+  background-position: 73% 16%;
+}
+</style>
+  </div>
+
+
+		</div>
+			</div>
+
+	
+</div>
+	<div id="gap-421857537" class="gap-element clearfix" style="display:block; height:auto;">
+		
+<style>
+#gap-421857537 {
+  padding-top: 30px;
+}
+</style>
+	</div>
+	
+	<div id="gap-2062288855" class="gap-element clearfix" style="display:block; height:auto;">
+		
+<style>
+#gap-2062288855 {
+  padding-top: 30px;
+}
+</style>
+	</div>
+	
+<div class="container section-title-container"><h3 class="section-title section-title-center"><b></b><span class="section-title-main">SIDEA FITNESS COMPANY</span><b></b></h3></div>
+<div class="row" id="row-1547507411">
+
+	<div id="col-998754882" class="col medium-5 small-12 large-5" data-animate="fadeInUp">
+		<div class="col-inner">
+			
+			
+
+		<div class="icon-box featured-box icon-box-right text-right" style="margin:px px px px;">
+					<div class="icon-box-img" style="width: 190px">
+				<div class="icon">
+					<div class="icon-inner">
+						<img width="400" height="400" src="images/olistico2-400x400.png" class="attachment-medium size-medium" alt="olistic" loading="lazy" srcset="images/olistico2-400x400.png 400w, images/olistico2-300x300.png 300w, images/olistico2-100x100.png 100w, images/olistico2-700x700.png 700w, images/olistico2-280x280.png 280w, images/olistico2-600x600.png 600w, images/olistico2.png 750w" sizes="(max-width: 400px) 100vw, 400px">					</div>
+				</div>
+			</div>
+				<div class="icon-box-text last-reset">
+									
+<h2 style="text-align: left;"><span style="color: #808080; font-size: 120%;" data-animate="fadeIn" data-animated="true">Awarness </span><br>
+<span style="color: #808080; font-size: 120%;" data-animate="fadeIn" data-animated="true">Health<br>
+Performance </span><br>
+<span style="font-size: 120%;" data-animate="fadeIn" data-animated="true"><strong>through </strong></span><br>
+<span style="font-size: 120%;" data-animate="fadeIn" data-animated="true"><strong>movement</strong></span></h2>
+		</div>
+	</div>
+	
+	
+		</div>
+			</div>
+
+	
+
+	<div id="col-1697380687" class="col medium-2 small-12 large-2" data-animate="fadeInUp">
+		<div class="col-inner">
+			
+			
+
+		<div class="icon-box featured-box icon-box-center text-center" style="margin:px px px px;">
+					<div class="icon-box-img" style="width: 193px">
+				<div class="icon">
+					<div class="icon-inner">
+						<img width="800" height="200" src="images/new-logo-black-small-800x200.png" class="attachment-medium size-medium" alt="Sidea-new-logo-black" loading="lazy" srcset="images/new-logo-black-small-800x200.png 800w, images/new-logo-black-small-700x175.png 700w, images/new-logo-black-small-768x192.png 768w, images/new-logo-black-small-600x150.png 600w, images/new-logo-black-small.png 1000w" sizes="(max-width: 800px) 100vw, 800px">					</div>
+				</div>
+			</div>
+				<div class="icon-box-text last-reset">
+									
+<h2 style="text-align: center;"><span style="color: #808080; font-size: 120%;" data-animate="fadeIn" data-animated="true">Passion</span><br>
+<span style="color: #808080; font-size: 120%;" data-animate="fadeIn" data-animated="true">for<br>
+</span><span style="font-size: 120%;" data-animate="fadeIn" data-animated="true"><strong>Sport</strong></span></h2>
+		</div>
+	</div>
+	
+	
+		</div>
+			</div>
+
+	
+
+	<div id="col-537239206" class="col medium-5 small-12 large-5" data-animate="fadeInUp">
+		<div class="col-inner">
+			
+			
+
+		<div class="icon-box featured-box icon-box-left text-left" style="margin:px px px px;">
+					<div class="icon-box-img" style="width: 190px">
+				<div class="icon">
+					<div class="icon-inner">
+						<img width="400" height="400" src="images/flying-400x400.png" class="attachment-medium size-medium" alt="flying" loading="lazy" srcset="images/flying.png 400w, images/flying-300x300.png 300w, images/flying-100x100.png 100w, images/flying-280x280.png 280w" sizes="(max-width: 400px) 100vw, 400px">					</div>
+				</div>
+			</div>
+				<div class="icon-box-text last-reset">
+									
+<h2 style="text-align: right;"><span style="color: #808080; font-size: 120%;" data-animate="fadeIn" data-animated="true">Culture of</span><br>
+<span style="color: #808080; font-size: 120%;" data-animate="fadeIn" data-animated="true">movement<br>
+</span><span style="font-size: 120%;" data-animate="fadeIn" data-animated="true"><strong>find<br>
+your</strong></span><br>
+<span style="font-size: 120%;" data-animate="fadeIn" data-animated="true"><strong>comfort zone</strong></span></h2>
+		</div>
+	</div>
+	
+	
+		</div>
+			</div>
+
+	
+
+	<div id="col-2139293594" class="col small-12 large-12">
+		<div class="col-inner">
+			
+			
+<div class="social-icons share-icons share-row relative full-width text-right"><span class="share-icons-title">Sidea Fitness</span><a href="whatsapp://send?text=Sidea%20Fitness%20company - https://sideaita.net/" data-action="share/whatsapp/share" class="icon button circle is-outline tooltip whatsapp show-for-medium" title="Share on WhatsApp"><i class="icon-whatsapp"></i></a><a href="https://www.facebook.com/sharer.php?u=https://sideaita.net/" data-label="Facebook" onclick="window.open(this.href,this.title,'width=500,height=500,top=300px,left=300px');  return false;" rel="noopener noreferrer nofollow" target="_blank" class="icon button circle is-outline tooltip facebook" title="Share on Facebook"><i class="icon-facebook"></i></a><a href="https://twitter.com/share?url=https://sideaita.net/" onclick="window.open(this.href,this.title,'width=500,height=500,top=300px,left=300px');  return false;" rel="noopener noreferrer nofollow" target="_blank" class="icon button circle is-outline tooltip twitter" title="Share on Twitter"><i class="icon-twitter"></i></a><a href="mailto:enteryour@addresshere.com?subject=Sidea%20Fitness%20company&amp;body=Check%20this%20out:%20https://sideaita.net/" rel="nofollow" class="icon button circle is-outline tooltip email" title="Email to a Friend"><i class="icon-envelop"></i></a><a href="https://pinterest.com/pin/create/button/?url=https://sideaita.net/&amp;media=https://sideaita.net/wp-content/uploads/2020/08/logo-quadrato.jpg&amp;description=Sidea%20Fitness%20company" onclick="window.open(this.href,this.title,'width=500,height=500,top=300px,left=300px');  return false;" rel="noopener noreferrer nofollow" target="_blank" class="icon button circle is-outline tooltip pinterest" title="Pin on Pinterest"><i class="icon-pinterest"></i></a><a href="https://www.linkedin.com/shareArticle?mini=true&url=https://sideaita.net/&title=Sidea%20Fitness%20company" onclick="window.open(this.href,this.title,'width=500,height=500,top=300px,left=300px');  return false;" rel="noopener noreferrer nofollow" target="_blank" class="icon button circle is-outline tooltip linkedin" title="Share on LinkedIn"><i class="icon-linkedin"></i></a><a href="https://tumblr.com/widgets/share/tool?canonicalUrl=https://sideaita.net/" target="_blank" class="icon button circle is-outline tooltip tumblr" onclick="window.open(this.href,this.title,'width=500,height=500,top=300px,left=300px');  return false;" rel="noopener noreferrer nofollow" title="Share on Tumblr"><i class="icon-tumblr"></i></a></div>
+		</div>
+			</div>
+
+	
+</div>
+
+			</div>
+
+
+
+</main>
+
+<footer id="footer" class="footer-wrapper">
+
+	
+<!-- FOOTER 1 -->
+
+<!-- FOOTER 2 -->
+<div class="footer-widgets footer footer-2 dark">
+		<div class="row dark large-columns-2 mb-0">
+	   		
+		<div id="block_widget-2" class="col pb-0 widget block_widget">
+		<span class="widget-title">About us</span><div class="is-divider small"></div>
+		<p>SIDEA “<strong>move</strong> smarter, get <strong>stronger</strong>, live <strong>better</strong>”<br><strong>- Address:</strong> Via de Gasperi 90, 47035 Gambettola -FC- ITALIA<br><strong>- Load/unloading goods:</strong> Via Perticari 11, 47035 Gambettola -FC- ITALIA<br><strong>- Phone</strong>: +39.0547.313298<br><strong>- Email:</strong> <a href="mailto:sidea@sideaita.it">sidea@sideaita.it</a></p>
+	<div id="gap-89024510" class="gap-element clearfix" style="display:block; height:auto;">
+		
+<style>
+#gap-89024510 {
+  padding-top: 4px;
+}
+</style>
+	</div>
+	
+
+<div class="social-icons follow-icons"><a href="https://www.facebook.com/sideaita/" target="_blank" data-label="Facebook" rel="noopener noreferrer nofollow" class="icon button circle is-outline facebook tooltip" title="Follow on Facebook"><i class="icon-facebook"></i></a><a href="https://www.instagram.com/sidea_fitness/" target="_blank" rel="noopener noreferrer nofollow" data-label="Instagram" class="icon button circle is-outline  instagram tooltip" title="Follow on Instagram"><i class="icon-instagram"></i></a><a href="mailto:sidea@sideaita.it" data-label="E-mail" rel="nofollow" class="icon button circle is-outline  email tooltip" title="Send us an email"><i class="icon-envelop"></i></a><a href="https://www.youtube.com/user/FitnessIT" target="_blank" rel="noopener noreferrer nofollow" data-label="YouTube" class="icon button circle is-outline  youtube tooltip" title="Follow on YouTube"><i class="icon-youtube"></i></a></div>
+		</div>
+				<div id="flatsome_recent_posts-8" class="col pb-0 widget flatsome_recent_posts">		<span class="widget-title">Recent Posts</span><div class="is-divider small"></div>		<ul>		
+		
+		<li class="recent-blog-posts-li">
+			<div class="flex-row recent-blog-posts align-top pt-half pb-half">
+				<div class="flex-col mr-half">
+					<div class="badge post-date  badge-outline">
+							<div class="badge-inner bg-fill" style="background: url(images/functional-training-running-sidea-1-300x300.jpg); border:0;">
+                                							</div>
+					</div>
+				</div>
+				<div class="flex-col flex-grow">
+					  <a href="https://sideaita.net/2020/10/14/functional-training-running-exercises/" title="Functional training and running: why it is useful and which kind of exercises to perform">Functional training and running: why it is useful and which kind of exercises to perform</a>
+				   	  <span class="post_comments op-7 block is-xsmall"><a href="https://sideaita.net/2020/10/14/functional-training-running-exercises/#respond"></a></span>
+				</div>
+			</div>
+		</li>
+		
+		
+		<li class="recent-blog-posts-li">
+			<div class="flex-row recent-blog-posts align-top pt-half pb-half">
+				<div class="flex-col mr-half">
+					<div class="badge post-date  badge-outline">
+							<div class="badge-inner bg-fill" style="background: url(images/padel-preparazione-atletica-sidea-300x300.jpg); border:0;">
+                                							</div>
+					</div>
+				</div>
+				<div class="flex-col flex-grow">
+					  <a href="https://sideaita.net/2020/09/16/padel-athletic-preparation-sport/" title="Padel: how to get physically prepared for one of the most popular sports in recent years">Padel: how to get physically prepared for one of the most popular sports in recent years</a>
+				   	  <span class="post_comments op-7 block is-xsmall"><a href="https://sideaita.net/2020/09/16/padel-athletic-preparation-sport/#respond"></a></span>
+				</div>
+			</div>
+		</li>
+		
+		
+		<li class="recent-blog-posts-li">
+			<div class="flex-row recent-blog-posts align-top pt-half pb-half">
+				<div class="flex-col mr-half">
+					<div class="badge post-date  badge-outline">
+							<div class="badge-inner bg-fill" style="background: url(images/glutex-allenamento-glutei-sidea-300x300.jpg); border:0;">
+                                							</div>
+					</div>
+				</div>
+				<div class="flex-col flex-grow">
+					  <a href="https://sideaita.net/2020/08/27/glutes-training-theories-exercises/" title="Glutes training: theories and exercises to improve the effectiveness">Glutes training: theories and exercises to improve the effectiveness</a>
+				   	  <span class="post_comments op-7 block is-xsmall"><a href="https://sideaita.net/2020/08/27/glutes-training-theories-exercises/#respond"></a></span>
+				</div>
+			</div>
+		</li>
+		
+		
+		<li class="recent-blog-posts-li">
+			<div class="flex-row recent-blog-posts align-top pt-half pb-half">
+				<div class="flex-col mr-half">
+					<div class="badge post-date  badge-outline">
+							<div class="badge-inner bg-fill" style="background: url(images/SIDEA-Si-Sand-Bag-43-300x300.jpg); border:0;">
+                                							</div>
+					</div>
+				</div>
+				<div class="flex-col flex-grow">
+					  <a href="https://sideaita.net/2020/07/31/si-sand-bag-training-sidea/" title="Si-Sand Bag: a training experience suitable for every user">Si-Sand Bag: a training experience suitable for every user</a>
+				   	  <span class="post_comments op-7 block is-xsmall"><a href="https://sideaita.net/2020/07/31/si-sand-bag-training-sidea/#respond"></a></span>
+				</div>
+			</div>
+		</li>
+		
+		
+		<li class="recent-blog-posts-li">
+			<div class="flex-row recent-blog-posts align-top pt-half pb-half">
+				<div class="flex-col mr-half">
+					<div class="badge post-date  badge-outline">
+							<div class="badge-inner bg-fill" style="background: url(images/flying-suspension-training-sidea-300x300.jpg); border:0;">
+                                							</div>
+					</div>
+				</div>
+				<div class="flex-col flex-grow">
+					  <a href="https://sideaita.net/2020/03/03/flying-suspension-training-versatile-tool/" title="Flying Suspension Training: the most versatile tool for functional training">Flying Suspension Training: the most versatile tool for functional training</a>
+				   	  <span class="post_comments op-7 block is-xsmall"><a href="https://sideaita.net/2020/03/03/flying-suspension-training-versatile-tool/#respond"></a></span>
+				</div>
+			</div>
+		</li>
+		
+		
+		<li class="recent-blog-posts-li">
+			<div class="flex-row recent-blog-posts align-top pt-half pb-half">
+				<div class="flex-col mr-half">
+					<div class="badge post-date  badge-outline">
+							<div class="badge-inner bg-fill" style="background: url(images/backache-workplace-fit-chair-sidea-300x300.jpg); border:0;">
+                                							</div>
+					</div>
+				</div>
+				<div class="flex-col flex-grow">
+					  <a href="https://sideaita.net/2020/02/24/backache-exercises-workplace/" title="Backache: some simple exercises you can perform in your workplace">Backache: some simple exercises you can perform in your workplace</a>
+				   	  <span class="post_comments op-7 block is-xsmall"><a href="https://sideaita.net/2020/02/24/backache-exercises-workplace/#respond"></a></span>
+				</div>
+			</div>
+		</li>
+				</ul>		</div><div id="tag_cloud-3" class="col pb-0 widget widget_tag_cloud"><span class="widget-title">Tag Categorie</span><div class="is-divider small"></div><div class="tagcloud"><a href="https://sideaita.net/product-category/anklets/" class="tag-cloud-link tag-link-2805 tag-link-position-1" style="font-size: 8pt;" aria-label="Anklets (4 items)">Anklets</a>
+<a href="https://sideaita.net/product-category/balance-board/" class="tag-cloud-link tag-link-68 tag-link-position-2" style="font-size: 10.413793103448pt;" aria-label="Balance board (9 items)">Balance board</a>
+<a href="https://sideaita.net/product-category/balance-training/" class="tag-cloud-link tag-link-69 tag-link-position-3" style="font-size: 15pt;" aria-label="Balance training (36 items)">Balance training</a>
+<a href="https://sideaita.net/product-category/barbell-accessories/" class="tag-cloud-link tag-link-2777 tag-link-position-4" style="font-size: 13.873563218391pt;" aria-label="Barbell Accessories (26 items)">Barbell Accessories</a>
+<a href="https://sideaita.net/product-category/barbell-weightlifting-powerlifting/" class="tag-cloud-link tag-link-2803 tag-link-position-5" style="font-size: 12.827586206897pt;" aria-label="Barbell Weightlifting/Powerlifting (19 items)">Barbell Weightlifting/Powerlifting</a>
+<a href="https://sideaita.net/product-category/bars/" class="tag-cloud-link tag-link-72 tag-link-position-6" style="font-size: 10.011494252874pt;" aria-label="Bars (8 items)">Bars</a>
+<a href="https://sideaita.net/product-category/big-tubing/" class="tag-cloud-link tag-link-2774 tag-link-position-7" style="font-size: 9.6091954022988pt;" aria-label="Big Tubing (7 items)">Big Tubing</a>
+<a href="https://sideaita.net/product-category/rack-structures/calisthenics-rack/" class="tag-cloud-link tag-link-2775 tag-link-position-8" style="font-size: 8.6436781609195pt;" aria-label="Calisthenics Rack (5 items)">Calisthenics Rack</a>
+<a href="https://sideaita.net/product-category/calisthenic-training/" class="tag-cloud-link tag-link-2784 tag-link-position-9" style="font-size: 13.310344827586pt;" aria-label="Calisthenic training (22 items)">Calisthenic training</a>
+<a href="https://sideaita.net/product-category/collar-spring-disc-plates/" class="tag-cloud-link tag-link-75 tag-link-position-10" style="font-size: 9.2068965517241pt;" aria-label="Collar &amp; spring (6 items)">Collar &amp; spring</a>
+<a href="https://sideaita.net/product-category/collar-spring-disc-plates/collari-50mm/" class="tag-cloud-link tag-link-2785 tag-link-position-11" style="font-size: 8pt;" aria-label="Collari 50mm (4 items)">Collari 50mm</a>
+<a href="https://sideaita.net/product-category/combat-fitness-boxing/" class="tag-cloud-link tag-link-76 tag-link-position-12" style="font-size: 10.413793103448pt;" aria-label="Combat-Fitness boxing (9 items)">Combat-Fitness boxing</a>
+<a href="https://sideaita.net/product-category/dumbbells/" class="tag-cloud-link tag-link-78 tag-link-position-13" style="font-size: 8pt;" aria-label="Dumbbells (4 items)">Dumbbells</a>
+<a href="https://sideaita.net/product-category/elastics-and-bands-fitness/" class="tag-cloud-link tag-link-2789 tag-link-position-14" style="font-size: 12.264367816092pt;" aria-label="Elastics and bands fitness (16 items)">Elastics and bands fitness</a>
+<a href="https://sideaita.net/product-category/fitness-balls/" class="tag-cloud-link tag-link-80 tag-link-position-15" style="font-size: 12.988505747126pt;" aria-label="Fitness balls (20 items)">Fitness balls</a>
+<a href="https://sideaita.net/product-category/flying-suspension-training/" class="tag-cloud-link tag-link-82 tag-link-position-16" style="font-size: 10.735632183908pt;" aria-label="Flying suspension training (10 items)">Flying suspension training</a>
+<a href="https://sideaita.net/product-category/foam-roller-eva-polyethylene/" class="tag-cloud-link tag-link-2816 tag-link-position-17" style="font-size: 8pt;" aria-label="Foam Roller Eva-Polyethylene (4 items)">Foam Roller Eva-Polyethylene</a>
+<a href="https://sideaita.net/product-category/functional-training/" class="tag-cloud-link tag-link-83 tag-link-position-18" style="font-size: 16.367816091954pt;" aria-label="Functional Training (54 items)">Functional Training</a>
+<a href="https://sideaita.net/product-category/group-activity/" class="tag-cloud-link tag-link-86 tag-link-position-19" style="font-size: 15.563218390805pt;" aria-label="Group activity (43 items)">Group activity</a>
+<a href="https://sideaita.net/product-category/handgrips/" class="tag-cloud-link tag-link-2799 tag-link-position-20" style="font-size: 11.862068965517pt;" aria-label="Handgrips (14 items)">Handgrips</a>
+<a href="https://sideaita.net/product-category/hip-thrust/" class="tag-cloud-link tag-link-2138 tag-link-position-21" style="font-size: 8.6436781609195pt;" aria-label="Hip Thrust (5 items)">Hip Thrust</a>
+<a href="https://sideaita.net/product-category/holistic-training/" class="tag-cloud-link tag-link-2791 tag-link-position-22" style="font-size: 15.241379310345pt;" aria-label="Holistic training (39 items)">Holistic training</a>
+<a href="https://sideaita.net/product-category/kettlebell-strong-competition-and-vinyl/" class="tag-cloud-link tag-link-88 tag-link-position-23" style="font-size: 8pt;" aria-label="Kettlebell Strong Competition &amp; vinyl (4 items)">Kettlebell Strong Competition &amp; vinyl</a>
+<a href="https://sideaita.net/product-category/kit-rack-superpump/" class="tag-cloud-link tag-link-89 tag-link-position-24" style="font-size: 10.011494252874pt;" aria-label="Kit-rack SuperPump (8 items)">Kit-rack SuperPump</a>
+<a href="https://sideaita.net/product-category/massage-roller-ball/" class="tag-cloud-link tag-link-267 tag-link-position-25" style="font-size: 10.735632183908pt;" aria-label="Massage Roller &amp; Ball (10 items)">Massage Roller &amp; Ball</a>
+<a href="https://sideaita.net/product-category/mats-yoga-pilates/" class="tag-cloud-link tag-link-2802 tag-link-position-26" style="font-size: 11.620689655172pt;" aria-label="Mats yoga-pilates (13 items)">Mats yoga-pilates</a>
+<a href="https://sideaita.net/product-category/news-product-trends/" class="tag-cloud-link tag-link-223 tag-link-position-27" style="font-size: 16.045977011494pt;" aria-label="New Product &amp; Trends (49 items)">New Product &amp; Trends</a>
+<a href="https://sideaita.net/product-category/rack-structures/outrace-packs/" class="tag-cloud-link tag-link-2840 tag-link-position-28" style="font-size: 11.862068965517pt;" aria-label="Outrace Packs (14 items)">Outrace Packs</a>
+<a href="https://sideaita.net/product-category/plates-and-bumper/" class="tag-cloud-link tag-link-2829 tag-link-position-29" style="font-size: 10.735632183908pt;" aria-label="Plates and bumper (10 items)">Plates and bumper</a>
+<a href="https://sideaita.net/product-category/products-code-order/" class="tag-cloud-link tag-link-2778 tag-link-position-30" style="font-size: 22pt;" aria-label="Products in code order (276 items)">Products in code order</a>
+<a href="https://sideaita.net/product-category/rack-structures/rackstation/" class="tag-cloud-link tag-link-233 tag-link-position-31" style="font-size: 14.35632183908pt;" aria-label="Rackstation (30 items)">Rackstation</a>
+<a href="https://sideaita.net/product-category/rack-structures/rackstation-packs/" class="tag-cloud-link tag-link-2841 tag-link-position-32" style="font-size: 10.011494252874pt;" aria-label="Rackstation Packs (8 items)">Rackstation Packs</a>
+<a href="https://sideaita.net/product-category/rack-tool/" class="tag-cloud-link tag-link-94 tag-link-position-33" style="font-size: 13.471264367816pt;" aria-label="Rack tool (23 items)">Rack tool</a>
+<a href="https://sideaita.net/product-category/ring/" class="tag-cloud-link tag-link-2807 tag-link-position-34" style="font-size: 8pt;" aria-label="Ring (4 items)">Ring</a>
+<a href="https://sideaita.net/product-category/ropes-functional-training/" class="tag-cloud-link tag-link-2810 tag-link-position-35" style="font-size: 9.2068965517241pt;" aria-label="Ropes functional training (6 items)">Ropes functional training</a>
+<a href="https://sideaita.net/product-category/rubber-flooring-platform/" class="tag-cloud-link tag-link-2788 tag-link-position-36" style="font-size: 9.6091954022988pt;" aria-label="Rubber Flooring &amp; Platform (7 items)">Rubber Flooring &amp; Platform</a>
+<a href="https://sideaita.net/product-category/si-club-hammer/" class="tag-cloud-link tag-link-2824 tag-link-position-37" style="font-size: 8pt;" aria-label="Si-Club &amp; Hammer (4 items)">Si-Club &amp; Hammer</a>
+<a href="https://sideaita.net/product-category/rack-structures/smart-racks/" class="tag-cloud-link tag-link-2842 tag-link-position-38" style="font-size: 10.735632183908pt;" aria-label="Smart Racks (10 items)">Smart Racks</a>
+<a href="https://sideaita.net/product-category/spare-parts/" class="tag-cloud-link tag-link-2814 tag-link-position-39" style="font-size: 12.505747126437pt;" aria-label="spare parts (17 items)">spare parts</a>
+<a href="https://sideaita.net/product-category/speed-and-agility-training/" class="tag-cloud-link tag-link-99 tag-link-position-40" style="font-size: 12.827586206897pt;" aria-label="Speed and Agility training (19 items)">Speed and Agility training</a>
+<a href="https://sideaita.net/product-category/step-plyobox-fitness/" class="tag-cloud-link tag-link-2822 tag-link-position-41" style="font-size: 10.735632183908pt;" aria-label="Step &amp; Plyobox (10 items)">Step &amp; Plyobox</a>
+<a href="https://sideaita.net/product-category/strong-fitness-training/" class="tag-cloud-link tag-link-102 tag-link-position-42" style="font-size: 17.977011494253pt;" aria-label="Strong fitness training (86 items)">Strong fitness training</a>
+<a href="https://sideaita.net/product-category/synthetic-grass-flooring/" class="tag-cloud-link tag-link-2755 tag-link-position-43" style="font-size: 8pt;" aria-label="Synthetic Grass Flooring (4 items)">Synthetic Grass Flooring</a>
+<a href="https://sideaita.net/product-category/tatami/" class="tag-cloud-link tag-link-97 tag-link-position-44" style="font-size: 10.011494252874pt;" aria-label="Tatami (8 items)">Tatami</a>
+<a href="https://sideaita.net/product-category/universal-storage-rack/" class="tag-cloud-link tag-link-240 tag-link-position-45" style="font-size: 9.6091954022988pt;" aria-label="Universal storage rack (7 items)">Universal storage rack</a></div>
+</div><div id="tag_cloud-14" class="col pb-0 widget widget_tag_cloud"><span class="widget-title">Tag Prodotto</span><div class="is-divider small"></div><div class="tagcloud"><a href="https://sideaita.net/product-tag/abdominals/" class="tag-cloud-link tag-link-2832 tag-link-position-1" style="font-size: 9.68pt;" aria-label="abdominals (3 items)">abdominals</a>
+<a href="https://sideaita.net/product-tag/agility/" class="tag-cloud-link tag-link-690 tag-link-position-2" style="font-size: 16.82pt;" aria-label="Agility (12 items)">Agility</a>
+<a href="https://sideaita.net/product-tag/anklets/" class="tag-cloud-link tag-link-2804 tag-link-position-3" style="font-size: 11.08pt;" aria-label="Anklets professional equipment (4 items)">Anklets professional equipment</a>
+<a href="https://sideaita.net/product-tag/balance/" class="tag-cloud-link tag-link-1282 tag-link-position-4" style="font-size: 16.4pt;" aria-label="Balance (11 items)">Balance</a>
+<a href="https://sideaita.net/product-tag/bar/" class="tag-cloud-link tag-link-772 tag-link-position-5" style="font-size: 17.8pt;" aria-label="Bar (14 items)">Bar</a>
+<a href="https://sideaita.net/product-tag/barbell/" class="tag-cloud-link tag-link-128 tag-link-position-6" style="font-size: 22pt;" aria-label="Barbell (29 items)">Barbell</a>
+<a href="https://sideaita.net/product-tag/accessori-bilanciere/" class="tag-cloud-link tag-link-2782 tag-link-position-7" style="font-size: 9.68pt;" aria-label="Barbell accessories (3 items)">Barbell accessories</a>
+<a href="https://sideaita.net/product-tag/bench/" class="tag-cloud-link tag-link-261 tag-link-position-8" style="font-size: 8pt;" aria-label="Bench (2 items)">Bench</a>
+<a href="https://sideaita.net/product-tag/tappetone-big-mat/" class="tag-cloud-link tag-link-2828 tag-link-position-9" style="font-size: 8pt;" aria-label="Big Mat (2 items)">Big Mat</a>
+<a href="https://sideaita.net/product-tag/big-tubing/" class="tag-cloud-link tag-link-183 tag-link-position-10" style="font-size: 13.88pt;" aria-label="Big Tubing (7 items)">Big Tubing</a>
+<a href="https://sideaita.net/product-tag/bumper-plate/" class="tag-cloud-link tag-link-219 tag-link-position-11" style="font-size: 16.4pt;" aria-label="Bumper plate (11 items)">Bumper plate</a>
+<a href="https://sideaita.net/product-tag/calisthenics-rack/" class="tag-cloud-link tag-link-315 tag-link-position-12" style="font-size: 12.2pt;" aria-label="Calisthenics Rack (5 items)">Calisthenics Rack</a>
+<a href="https://sideaita.net/product-tag/calisthenics-station/" class="tag-cloud-link tag-link-255 tag-link-position-13" style="font-size: 12.2pt;" aria-label="Calisthenics Station (5 items)">Calisthenics Station</a>
+<a href="https://sideaita.net/product-tag/dumbbells/" class="tag-cloud-link tag-link-2786 tag-link-position-14" style="font-size: 12.2pt;" aria-label="Dumbbells (5 items)">Dumbbells</a>
+<a href="https://sideaita.net/product-tag/ecogarden/" class="tag-cloud-link tag-link-2773 tag-link-position-15" style="font-size: 11.08pt;" aria-label="Ecogarden (4 items)">Ecogarden</a>
+<a href="https://sideaita.net/product-tag/ecogym/" class="tag-cloud-link tag-link-211 tag-link-position-16" style="font-size: 12.2pt;" aria-label="EcoGym (5 items)">EcoGym</a>
+<a href="https://sideaita.net/product-tag/elastics/" class="tag-cloud-link tag-link-2790 tag-link-position-17" style="font-size: 15.28pt;" aria-label="Elastics (9 items)">Elastics</a>
+<a href="https://sideaita.net/product-tag/boxing/" class="tag-cloud-link tag-link-163 tag-link-position-18" style="font-size: 15.28pt;" aria-label="Fitness Boxing (9 items)">Fitness Boxing</a>
+<a href="https://sideaita.net/product-tag/flying/" class="tag-cloud-link tag-link-185 tag-link-position-19" style="font-size: 15.84pt;" aria-label="Flying (10 items)">Flying</a>
+<a href="https://sideaita.net/product-tag/foam-roller/" class="tag-cloud-link tag-link-236 tag-link-position-20" style="font-size: 9.68pt;" aria-label="Foam roller (3 items)">Foam roller</a>
+<a href="https://sideaita.net/product-tag/giant-ball/" class="tag-cloud-link tag-link-256 tag-link-position-21" style="font-size: 8pt;" aria-label="Giant Ball (2 items)">Giant Ball</a>
+<a href="https://sideaita.net/product-tag/gym-ball/" class="tag-cloud-link tag-link-201 tag-link-position-22" style="font-size: 9.68pt;" aria-label="Gym ball (3 items)">Gym ball</a>
+<a href="https://sideaita.net/product-tag/hip-thrust/" class="tag-cloud-link tag-link-2503 tag-link-position-23" style="font-size: 12.2pt;" aria-label="hip thrust (5 items)">hip thrust</a>
+<a href="https://sideaita.net/product-tag/jump-rope/" class="tag-cloud-link tag-link-1083 tag-link-position-24" style="font-size: 9.68pt;" aria-label="Jump rope (3 items)">Jump rope</a>
+<a href="https://sideaita.net/product-tag/kettlebell/" class="tag-cloud-link tag-link-192 tag-link-position-25" style="font-size: 12.2pt;" aria-label="Kettlebell (5 items)">Kettlebell</a>
+<a href="https://sideaita.net/product-tag/massage-ball/" class="tag-cloud-link tag-link-207 tag-link-position-26" style="font-size: 15.84pt;" aria-label="Massage Ball (10 items)">Massage Ball</a>
+<a href="https://sideaita.net/product-tag/medicine-ball/" class="tag-cloud-link tag-link-2817 tag-link-position-27" style="font-size: 13.88pt;" aria-label="Medicine Ball (7 items)">Medicine Ball</a>
+<a href="https://sideaita.net/product-tag/pilates-ball/" class="tag-cloud-link tag-link-202 tag-link-position-28" style="font-size: 11.08pt;" aria-label="Pilates ball (4 items)">Pilates ball</a>
+<a href="https://sideaita.net/product-tag/rackstation/" class="tag-cloud-link tag-link-187 tag-link-position-29" style="font-size: 21.72pt;" aria-label="Rackstation (28 items)">Rackstation</a>
+<a href="https://sideaita.net/product-tag/rope/" class="tag-cloud-link tag-link-173 tag-link-position-30" style="font-size: 9.68pt;" aria-label="Rope (3 items)">Rope</a>
+<a href="https://sideaita.net/product-tag/si-club/" class="tag-cloud-link tag-link-234 tag-link-position-31" style="font-size: 11.08pt;" aria-label="Si-club (4 items)">Si-club</a>
+<a href="https://sideaita.net/product-tag/sled/" class="tag-cloud-link tag-link-227 tag-link-position-32" style="font-size: 9.68pt;" aria-label="Sled (3 items)">Sled</a>
+<a href="https://sideaita.net/product-tag/carbonate-magnesium/" class="tag-cloud-link tag-link-153 tag-link-position-33" style="font-size: 9.68pt;" aria-label="Sport Chalk (3 items)">Sport Chalk</a>
+<a href="https://sideaita.net/product-tag/spring-collar/" class="tag-cloud-link tag-link-160 tag-link-position-34" style="font-size: 8pt;" aria-label="Spring Collar (2 items)">Spring Collar</a>
+<a href="https://sideaita.net/product-tag/step/" class="tag-cloud-link tag-link-230 tag-link-position-35" style="font-size: 14.58pt;" aria-label="Step (8 items)">Step</a>
+<a href="https://sideaita.net/product-tag/storage-rack/" class="tag-cloud-link tag-link-241 tag-link-position-36" style="font-size: 20.6pt;" aria-label="storage rack (23 items)">storage rack</a>
+<a href="https://sideaita.net/product-tag/superpump/" class="tag-cloud-link tag-link-224 tag-link-position-37" style="font-size: 13.88pt;" aria-label="Superpump (7 items)">Superpump</a>
+<a href="https://sideaita.net/product-tag/tatami/" class="tag-cloud-link tag-link-210 tag-link-position-38" style="font-size: 14.58pt;" aria-label="Tatami - Professional equipment (8 items)">Tatami - Professional equipment</a>
+<a href="https://sideaita.net/product-tag/universal-storage-rack/" class="tag-cloud-link tag-link-2830 tag-link-position-39" style="font-size: 13.88pt;" aria-label="universal storage rack (7 items)">universal storage rack</a>
+<a href="https://sideaita.net/product-tag/weighted-jacket/" class="tag-cloud-link tag-link-989 tag-link-position-40" style="font-size: 9.68pt;" aria-label="Weighted Jacket (3 items)">Weighted Jacket</a>
+<a href="https://sideaita.net/product-tag/weight-lifting-platform/" class="tag-cloud-link tag-link-213 tag-link-position-41" style="font-size: 9.68pt;" aria-label="Weight Lifting Platform (3 items)">Weight Lifting Platform</a>
+<a href="https://sideaita.net/product-tag/wheel-for-abdominals/" class="tag-cloud-link tag-link-2833 tag-link-position-42" style="font-size: 9.68pt;" aria-label="Wheel for Abdominals (3 items)">Wheel for Abdominals</a>
+<a href="https://sideaita.net/product-tag/wooden-ring/" class="tag-cloud-link tag-link-244 tag-link-position-43" style="font-size: 9.68pt;" aria-label="Wooden Ring (3 items)">Wooden Ring</a>
+<a href="https://sideaita.net/product-tag/yoga/" class="tag-cloud-link tag-link-262 tag-link-position-44" style="font-size: 11.08pt;" aria-label="Yoga (4 items)">Yoga</a>
+<a href="https://sideaita.net/product-tag/yoga-pilates-mat/" class="tag-cloud-link tag-link-1181 tag-link-position-45" style="font-size: 16.82pt;" aria-label="Yoga &amp; pilates MAT (12 items)">Yoga &amp; pilates MAT</a></div>
+</div>        
+		</div>
+</div>
+
+
+
+<div class="absolute-footer dark medium-text-center small-text-center">
+  <div class="container clearfix">
+
+    
+    <div class="footer-primary pull-left">
+              <div class="menu-secondary-container"><ul id="menu-secondary-2" class="links footer-nav uppercase"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-968"><a title="News Sidea" href="https://sideaita.net/news-sidea/">Sidea News &#8211; Blog</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3170"><a title="Sidea Catalog" href="https://sideaita.net/download-catalog/">Sidea Catalog</a></li>
+</ul></div>            <div class="copyright-footer">
+        Copyright 2021 © <strong>SIDEA</strong> -
+   Cap.soc. int. vers. 150.000 Euro - Cod.Fisc. / P.Iva 02693190403 R.E.A 285320/99
+<br>Warning: The photos and descriptions are illustrative.The Company may make changes to the material on the Website, or to the products at any time without notice.      </div>
+          </div>
+  </div>
+</div>
+<a href="#top" class="back-to-top button icon invert plain fixed bottom z-1 is-outline hide-for-medium circle" id="top-link"><i class="icon-angle-up"></i></a>
+
+</footer>
+
+</div>
+
+<div id="main-menu" class="mobile-sidebar no-scrollbar mfp-hide">
+	<div class="sidebar-menu no-scrollbar ">
+		<ul class="nav nav-sidebar nav-vertical nav-uppercase">
+			<li class="header-search-form search-form html relative has-icon">
+	<div class="header-search-form-wrapper">
+		<div class="searchform-wrapper ux-search-box relative form-flat is-normal"><form role="search" method="get" class="searchform" action="https://sideaita.net/">
+	<div class="flex-row relative">
+					<div class="flex-col search-form-categories">
+				<select class="search_categories resize-select mb-0" name="product_cat"><option value selected="selected">All</option><option value="adjustable-bench">Adjustable-Bench</option><option value="agility-ladder">Agility Ladder</option><option value="anklets">Anklets</option><option value="balance-board">Balance board</option><option value="balance-training">Balance training</option><option value="ballast-jacket-weighted">Ballast jacket weighted</option><option value="barbell-accessories">Barbell Accessories</option><option value="barbell-weightlifting-powerlifting">Barbell Weightlifting/Powerlifting</option><option value="bars">Bars</option><option value="big-tubing">Big Tubing</option><option value="calisthenic-training">Calisthenic training</option><option value="carbonate-magnesium-magnesite">Carbonate magnesium</option><option value="collar-spring-disc-plates">Collar &amp; spring</option><option value="combat-fitness-boxing">Combat-Fitness boxing</option><option value="dumbbells">Dumbbells</option><option value="elastics-and-bands-fitness">Elastics and bands fitness</option><option value="fitness-balls">Fitness balls</option><option value="flowbag-sandbag">Flowbag Sandbag</option><option value="flying-suspension-training">Flying suspension training</option><option value="foam-roller-eva-polyethylene">Foam Roller Eva-Polyethylene</option><option value="functional-training">Functional Training</option><option value="ghd-bench-sissy-squat">Ghd-bench sissy-squat</option><option value="glove">Glove</option><option value="group-activity">Group activity</option><option value="handgrips">Handgrips</option><option value="hip-thrust">Hip Thrust</option><option value="holistic-training">Holistic training</option><option value="kettlebell-strong-competition-and-vinyl">Kettlebell Strong Competition &amp; vinyl</option><option value="kit-rack-superpump">Kit-rack SuperPump</option><option value="massage-roller-ball">Massage Roller &amp; Ball</option><option value="mats-yoga-pilates">Mats yoga-pilates</option><option value="news-product-trends">New Product &amp; Trends</option><option value="parallettes-push-up">Parallettes &amp; Push-up</option><option value="plates-and-bumper">Plates and bumper</option><option value="products-code-order">Products in code order</option><option value="rack-structures">Rack &amp; Structures Functional Training</option><option value="rack-tool">Rack tool</option><option value="ring">Ring</option><option value="ropes-functional-training">Ropes functional training</option><option value="rubber-flooring-platform">Rubber Flooring &amp; Platform</option><option value="si-club-hammer">Si-Club &amp; Hammer</option><option value="si-wheel-core-wheels-abdominal-suspension-band">Si-Wheel - Core Wheels &amp; Abdominal Suspension Band</option><option value="sled-fitness">Sled Fitness</option><option value="spare-parts">spare parts</option><option value="speed-and-agility-training">Speed and Agility training</option><option value="step-plyobox-fitness">Step &amp; Plyobox</option><option value="strong-fitness-training">Strong fitness training</option><option value="swedish-wall-bars">Swedish wall bars</option><option value="synthetic-grass-flooring">Synthetic Grass Flooring</option><option value="tatami">Tatami</option><option value="trampoline">Trampoline</option><option value="universal-storage-rack">Universal storage rack</option></select>			</div>
+						<div class="flex-col flex-grow">
+			<label class="screen-reader-text" for="woocommerce-product-search-field-1">Search for:</label>
+			<input type="search" id="woocommerce-product-search-field-1" class="search-field mb-0" placeholder="Sidea search..." value name="s">
+			<input type="hidden" name="post_type" value="product">
+					</div>
+		<div class="flex-col">
+			<button type="submit" value="Search" class="ux-search-submit submit-button secondary button icon mb-0" aria-label="Submit">
+				<i class="icon-search"></i>			</button>
+		</div>
+	</div>
+	<div class="live-search-results text-left z-top"></div>
+</form>
+</div>	</div>
+</li><li id="menu-item-10165" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10165"><a title="STRUCTURES" href="https://www.outracefitness.com">STRUCTURES</a></li>
+<li id="menu-item-10167" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-10167"><a title="SIDEA SELECTIONSIDEA SELECTION" href="https://sideaita.net/product-selection/">SIDEA SELECTION</a>
+<ul class="sub-menu nav-sidebar-ul children">
+	<li id="menu-item-10168" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-10168"><a title="Special selection">Sidea for:</a>
+	<ul class="sub-menu nav-sidebar-ul">
+		<li id="menu-item-10169" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10169"><a title="Balance training" href="https://sideaita.net/product-category/balance-training/"><strong>Balance </strong>-training</a></li>
+		<li id="menu-item-10257" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10257"><a title="Calisthenic training" href="https://sideaita.net/product-category/calisthenic-training/"><strong>Calisthenic </strong>-training</a></li>
+		<li id="menu-item-10170" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10170"><a title="Functional Training" href="https://sideaita.net/product-category/functional-training/"><strong>Functional</strong>-Training</a></li>
+		<li id="menu-item-10171" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10171"><a title="Group activity" href="https://sideaita.net/product-category/group-activity/"><strong>Group</strong>-activity</a></li>
+		<li id="menu-item-10259" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10259"><a title="Holistic training" href="https://sideaita.net/product-category/holistic-training/"><strong>Holistic </strong>-training</a></li>
+		<li id="menu-item-10172" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10172"><a title="Speed and Agility training" href="https://sideaita.net/product-category/speed-and-agility-training/"><strong>Speed and Agility </strong>-training</a></li>
+		<li id="menu-item-10173" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10173"><a title="Strong fitness training" href="https://sideaita.net/product-category/strong-fitness-training/"><strong>Strong fitness</strong>-training</a></li>
+		<li id="menu-item-10174" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10174"><a title="Synthetic Grass Flooring" href="https://sideaita.net/product-category/synthetic-grass-flooring/"><strong>Synthetic</strong>-Grass Flooring</a></li>
+		<li id="menu-item-10175" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10175"><a title="Rackstation" href="https://sideaita.net/product-category/rack-structures/rackstation/"><strong>Rackstation</strong></a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-10177" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-10177"><a title="PRODUCTS BY CATEGORY" href="#">PRODUCTS BY CATEGORY</a>
+<ul class="sub-menu nav-sidebar-ul children">
+	<li id="menu-item-10178" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-10178"><a title="Product &#038; Categories">Product &#038; Categories</a>
+	<ul class="sub-menu nav-sidebar-ul">
+		<li id="menu-item-10179" class="label-popular menu-item menu-item-type-post_type menu-item-object-page menu-item-10179"><a title="Shop" href="https://sideaita.net/product-category/">Category</a></li>
+		<li id="menu-item-10180" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10180"><a title="News Product &#038; Trends" href="https://sideaita.net/product-category/news-product-trends/">New Product &amp; Trends</a></li>
+		<li id="menu-item-10181" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-10181"><a>&#8211;</a></li>
+		<li id="menu-item-10182" class="label-popular menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10182"><a title="Rackstation" href="https://sideaita.net/product-category/rack-structures/rackstation/">Rackstation</a></li>
+		<li id="menu-item-10183" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10183"><a title="Universal storage rack" href="https://sideaita.net/product-category/universal-storage-rack/">Universal storage rack</a></li>
+	</ul>
+</li>
+	<li id="menu-item-10184" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-10184"><a>&#8211;</a>
+	<ul class="sub-menu nav-sidebar-ul">
+		<li id="menu-item-10260" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10260"><a href="https://sideaita.net/product-category/adjustable-bench/">Adjustable-Bench</a></li>
+		<li id="menu-item-10261" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10261"><a href="https://sideaita.net/product-category/agility-ladder/">Agility Ladder</a></li>
+		<li id="menu-item-10262" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10262"><a href="https://sideaita.net/product-category/anklets/">Anklets</a></li>
+		<li id="menu-item-10263" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10263"><a href="https://sideaita.net/product-category/balance-board/">Balance board</a></li>
+		<li id="menu-item-10264" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10264"><a href="https://sideaita.net/product-category/ballast-jacket-weighted/">Ballast jacket weighted</a></li>
+		<li id="menu-item-10265" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10265"><a href="https://sideaita.net/product-category/barbell-accessories/">Barbell Accessories</a></li>
+		<li id="menu-item-10266" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10266"><a href="https://sideaita.net/product-category/barbell-weightlifting-powerlifting/">Barbell Weightlifting/Powerlifting</a></li>
+		<li id="menu-item-10267" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10267"><a href="https://sideaita.net/product-category/bars/">Bars</a></li>
+		<li id="menu-item-10268" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10268"><a href="https://sideaita.net/product-category/big-tubing/">Big Tubing</a></li>
+		<li id="menu-item-10269" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10269"><a href="https://sideaita.net/product-category/rack-structures/calisthenics-rack/">Calisthenics Rack</a></li>
+		<li id="menu-item-10270" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10270"><a href="https://sideaita.net/product-category/carbonate-magnesium-magnesite/">Carbonate magnesium</a></li>
+		<li id="menu-item-10271" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10271"><a href="https://sideaita.net/product-category/collar-spring-disc-plates/">Collar &amp; spring</a></li>
+		<li id="menu-item-10272" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10272"><a href="https://sideaita.net/product-category/combat-fitness-boxing/">Combat-Fitness boxing</a></li>
+		<li id="menu-item-10273" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10273"><a href="https://sideaita.net/product-category/dumbbells/">Dumbbells</a></li>
+		<li id="menu-item-10274" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10274"><a href="https://sideaita.net/product-category/elastics-and-bands-fitness/">Elastics and bands fitness</a></li>
+		<li id="menu-item-10275" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10275"><a href="https://sideaita.net/product-category/fitness-balls/">Fitness balls</a></li>
+		<li id="menu-item-10276" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10276"><a href="https://sideaita.net/product-category/flowbag-sandbag/">Flowbag Sandbag</a></li>
+		<li id="menu-item-10277" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10277"><a href="https://sideaita.net/product-category/flying-suspension-training/">Flying suspension training</a></li>
+		<li id="menu-item-10278" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10278"><a href="https://sideaita.net/product-category/foam-roller-eva-polyethylene/">Foam Roller Eva-Polyethylene</a></li>
+		<li id="menu-item-10279" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10279"><a href="https://sideaita.net/product-category/functional-training/">Functional Training</a></li>
+		<li id="menu-item-10280" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10280"><a href="https://sideaita.net/product-category/ghd-bench-sissy-squat/">Ghd-bench sissy-squat</a></li>
+		<li id="menu-item-10281" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10281"><a href="https://sideaita.net/product-category/glove/">Glove</a></li>
+		<li id="menu-item-10282" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10282"><a href="https://sideaita.net/product-category/handgrips/">Handgrips</a></li>
+		<li id="menu-item-10283" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10283"><a href="https://sideaita.net/product-category/hip-thrust/">Hip Thrust</a></li>
+		<li id="menu-item-10284" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10284"><a href="https://sideaita.net/product-category/kettlebell-strong-competition-and-vinyl/">Kettlebell Strong Competition &amp; vinyl</a></li>
+		<li id="menu-item-10285" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10285"><a href="https://sideaita.net/product-category/kit-rack-superpump/">Kit-rack SuperPump</a></li>
+		<li id="menu-item-10286" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10286"><a href="https://sideaita.net/product-category/massage-roller-ball/">Massage Roller &amp; Ball</a></li>
+		<li id="menu-item-10287" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10287"><a href="https://sideaita.net/product-category/mats-yoga-pilates/">Mats yoga-pilates</a></li>
+		<li id="menu-item-10288" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10288"><a href="https://sideaita.net/product-category/parallettes-push-up/">Parallettes &amp; Push-up</a></li>
+		<li id="menu-item-10289" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10289"><a href="https://sideaita.net/product-category/plates-and-bumper/">Plates and bumper</a></li>
+		<li id="menu-item-10290" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10290"><a href="https://sideaita.net/product-category/rack-tool/">Rack tool</a></li>
+		<li id="menu-item-10291" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10291"><a href="https://sideaita.net/product-category/rack-structures/rackstation/">Rackstation</a></li>
+		<li id="menu-item-10292" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10292"><a href="https://sideaita.net/product-category/ring/">Ring</a></li>
+		<li id="menu-item-10293" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10293"><a href="https://sideaita.net/product-category/ropes-functional-training/">Ropes functional training</a></li>
+		<li id="menu-item-10294" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10294"><a href="https://sideaita.net/product-category/rubber-flooring-platform/">Rubber Flooring &amp; Platform</a></li>
+		<li id="menu-item-10295" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10295"><a href="https://sideaita.net/product-category/si-club-hammer/">Si-Club &amp; Hammer</a></li>
+		<li id="menu-item-10296" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10296"><a href="https://sideaita.net/product-category/si-wheel-core-wheels-abdominal-suspension-band/">Si-Wheel &#8211; Core Wheels &amp; Abdominal Suspension Band</a></li>
+		<li id="menu-item-10297" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10297"><a href="https://sideaita.net/product-category/sled-fitness/">Sled Fitness</a></li>
+		<li id="menu-item-10298" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10298"><a href="https://sideaita.net/product-category/spare-parts/">spare parts</a></li>
+		<li id="menu-item-10300" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10300"><a href="https://sideaita.net/product-category/step-plyobox-fitness/">Step &amp; Plyobox</a></li>
+		<li id="menu-item-10301" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10301"><a href="https://sideaita.net/product-category/swedish-wall-bars/">Swedish wall bars</a></li>
+		<li id="menu-item-10302" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10302"><a href="https://sideaita.net/product-category/synthetic-grass-flooring/">Synthetic Grass Flooring</a></li>
+		<li id="menu-item-10303" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10303"><a href="https://sideaita.net/product-category/tatami/">Tatami</a></li>
+		<li id="menu-item-10304" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10304"><a href="https://sideaita.net/product-category/trampoline/">Trampoline</a></li>
+		<li id="menu-item-10305" class="menu-item menu-item-type-taxonomy menu-item-object-product_cat menu-item-10305"><a href="https://sideaita.net/product-category/universal-storage-rack/">Universal storage rack</a></li>
+	</ul>
+</li>
+</ul>
+</li>
+<li id="menu-item-10209" class="uppercase menu-item menu-item-type-post_type menu-item-object-page menu-item-10209"><a title="Gym Design" href="https://sideaita.net/gym-design/">Gym Design</a></li>
+<li id="menu-item-10210" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-10210"><a title="EDUCATIONAL" href="#">EDUCATIONAL</a>
+<ul class="sub-menu nav-sidebar-ul children">
+	<li id="menu-item-10211" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-10211"><a title="Sidea Training">Sidea Training</a>
+	<ul class="sub-menu nav-sidebar-ul">
+		<li id="menu-item-10212" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10212"><a title="Instructor Training Certification" href="https://sideaita.net/instructor-training-certification/">Instructor Training Certification</a></li>
+		<li id="menu-item-10213" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10213"><a title="Training Video" href="https://sideaita.net/training-video/">Training Video</a></li>
+	</ul>
+</li>
+	<li id="menu-item-10214" class="image-column menu-item menu-item-type-custom menu-item-object-custom menu-item-10214"><a title="Sidea Educational">Sidea Educational</a></li>
+</ul>
+</li>
+<li id="menu-item-10215" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-10215"><a title="CONTACTS" href="#">CONTACTS</a>
+<ul class="sub-menu nav-sidebar-ul children">
+	<li id="menu-item-10216" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-10216"><a title="Sidea Company">Sidea Company</a>
+	<ul class="sub-menu nav-sidebar-ul">
+		<li id="menu-item-10217" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10217"><a title="About Us" href="https://sideaita.net/about/">About Us</a></li>
+		<li id="menu-item-10218" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10218"><a title="Contact Us" href="https://sideaita.net/contact/">Contact Us</a></li>
+		<li id="menu-item-10219" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-10219"><a title="Virtual Tour" href="https://sideaita.net/virtual-tour/">Virtual Tour</a></li>
+		<li id="menu-item-10220" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-10220"><a title="Privacy Policy" href="https://sideaita.net/privacy-policy/">Privacy Policy</a></li>
+	</ul>
+</li>
+	<li id="menu-item-10221" class="image-column menu-item menu-item-type-custom menu-item-object-custom menu-item-10221"><a title="Sidea Fitness">Sidea Fitness</a></li>
+</ul>
+</li>
+<li class="html header-social-icons ml-0">
+	<div class="social-icons follow-icons"><a href="https://www.facebook.com/sideaita/" target="_blank" data-label="Facebook" rel="noopener noreferrer nofollow" class="icon plain facebook tooltip" title="Follow on Facebook"><i class="icon-facebook"></i></a><a href="https://www.instagram.com/sidea_fitness/" target="_blank" rel="noopener noreferrer nofollow" data-label="Instagram" class="icon plain  instagram tooltip" title="Follow on Instagram"><i class="icon-instagram"></i></a><a href="mailto:sidea@sideaita.it" data-label="E-mail" rel="nofollow" class="icon plain  email tooltip" title="Send us an email"><i class="icon-envelop"></i></a><a href="https://www.pinterest.it/sideafitness/" target="_blank" rel="noopener noreferrer nofollow" data-label="Pinterest" class="icon plain  pinterest tooltip" title="Follow on Pinterest"><i class="icon-pinterest"></i></a><a href="https://www.linkedin.com/company/sideafitness/" target="_blank" rel="noopener noreferrer nofollow" data-label="LinkedIn" class="icon plain  linkedin tooltip" title="Follow on LinkedIn"><i class="icon-linkedin"></i></a><a href="https://www.youtube.com/user/FitnessIT/" target="_blank" rel="noopener noreferrer nofollow" data-label="YouTube" class="icon plain  youtube tooltip" title="Follow on YouTube"><i class="icon-youtube"></i></a></div></li>		</ul>
+	</div>
+</div>
+		<!-- Facebook Pixel Code -->
+			<script>
+			!function(f,b,e,v,n,t,s)
+			{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+			n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+			if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+			n.queue=[];t=b.createElement(e);t.async=!0;
+			t.src=v;s=b.getElementsByTagName(e)[0];
+			s.parentNode.insertBefore(t,s)}(window,document,'script',
+			'https://connect.facebook.net/en_US/fbevents.js');
+			 fbq('init', '375341429575430'); 
+			fbq('track', 'PageView');
+			</script>
+			<noscript><img height="1" width="1" src="tr"></noscript>
+		<!-- End Facebook Pixel Code -->    <div id="login-form-popup" class="lightbox-content mfp-hide">
+            <div class="woocommerce-notices-wrapper"></div>
+<div class="account-container lightbox-inner">
+
+	
+			<div class="account-login-inner">
+
+				<h3 class="uppercase">Login</h3>
+
+				<form class="woocommerce-form woocommerce-form-login login" method="post">
+
+					
+					<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+						<label for="username">Username or email address&nbsp;<span class="required">*</span></label>
+						<input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="username" autocomplete="username" value>					</p>
+					<p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+						<label for="password">Password&nbsp;<span class="required">*</span></label>
+						<input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" autocomplete="current-password">
+					</p>
+
+					
+					<p class="form-row">
+						<label class="woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme">
+							<input class="woocommerce-form__input woocommerce-form__input-checkbox" name="rememberme" type="checkbox" id="rememberme" value="forever"> <span>Remember me</span>
+						</label>
+						<input type="hidden" id="woocommerce-login-nonce" name="woocommerce-login-nonce" value="e7662ea78e"><input type="hidden" name="_wp_http_referer" value="/">						<button type="submit" class="woocommerce-button button woocommerce-form-login__submit" name="login" value="Log in">Log in</button>
+					</p>
+					<p class="woocommerce-LostPassword lost_password">
+						<a href="https://sideaita.net/my-account/lost-password/">Lost your password?</a>
+					</p>
+
+					
+				</form>
+			</div>
+
+			
+</div>
+
+          </div>
+  	<div class="flatsome-cookies">
+		<div class="flatsome-cookies__inner">
+			<div class="flatsome-cookies__text">
+				This site uses cookies to offer you a better browsing experience. By browsing this website, you agree to our use of cookies.			</div>
+			<div class="flatsome-cookies__buttons">
+				<a href="https://sideaita.net/privacy-policy/" target="_self" class="button secondary flatsome-cookies__more-btn">
+    <span>More info</span>
+  </a>
+				<a href="#" target="_self" class="button primary flatsome-cookies__accept-btn">
+    <span>Accept</span>
+  </a>
+			</div>
+		</div>
+	</div>
+		<script type="text/javascript">
+		(function () {
+			var c = document.body.className;
+			c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+			document.body.className = c;
+		})();
+	</script>
+	<script type="text/javascript" src="js/select2.js" id="select2-js"></script>
+<script type="text/javascript" src="js/wp-polyfill.min.js" id="wp-polyfill-js"></script>
+<script type="text/javascript" id="wp-polyfill-js-after">
+( 'fetch' in window ) || document.write( '<script src="https://sideaita.net/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js?ver=3.0.0"></scr' + 'ipt>' );( document.contains ) || document.write( '<script src="https://sideaita.net/wp-includes/js/dist/vendor/wp-polyfill-node-contains.min.js?ver=3.42.0"></scr' + 'ipt>' );( window.DOMRect ) || document.write( '<script src="https://sideaita.net/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js?ver=3.42.0"></scr' + 'ipt>' );( window.URL && window.URL.prototype && window.URLSearchParams ) || document.write( '<script src="https://sideaita.net/wp-includes/js/dist/vendor/wp-polyfill-url.min.js?ver=3.6.4"></scr' + 'ipt>' );( window.FormData && window.FormData.prototype.keys ) || document.write( '<script src="https://sideaita.net/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js?ver=3.0.12"></scr' + 'ipt>' );( Element.prototype.matches && Element.prototype.closest ) || document.write( '<script src="https://sideaita.net/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js?ver=2.0.2"></scr' + 'ipt>' );( 'objectFit' in document.documentElement.style ) || document.write( '<script src="https://sideaita.net/wp-includes/js/dist/vendor/wp-polyfill-object-fit.min.js?ver=2.3.4"></scr' + 'ipt>' );
+</script>
+<script type="text/javascript" src="js/hooks.min.js" id="wp-hooks-js"></script>
+<script type="text/javascript" src="js/i18n.min.js" id="wp-i18n-js"></script>
+<script type="text/javascript" id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type="text/javascript" src="js/lodash.min.js" id="lodash-js"></script>
+<script type="text/javascript" id="lodash-js-after">
+window.lodash = _.noConflict();
+</script>
+<script type="text/javascript" src="js/url.min.js" id="wp-url-js"></script>
+<script type="text/javascript" id="wp-api-fetch-js-translations">
+( function( domain, translations ) {
+	var localeData = translations.locale_data[ domain ] || translations.locale_data.messages;
+	localeData[""].domain = domain;
+	wp.i18n.setLocaleData( localeData, domain );
+} )( "default", { "locale_data": { "messages": { "": {} } } } );
+</script>
+<script type="text/javascript" src="js/api-fetch.min.js" id="wp-api-fetch-js"></script>
+<script type="text/javascript" id="wp-api-fetch-js-after">
+wp.apiFetch.use( wp.apiFetch.createRootURLMiddleware( "https://sideaita.net/wp-json/" ) );
+wp.apiFetch.nonceMiddleware = wp.apiFetch.createNonceMiddleware( "ec72328655" );
+wp.apiFetch.use( wp.apiFetch.nonceMiddleware );
+wp.apiFetch.use( wp.apiFetch.mediaUploadMiddleware );
+wp.apiFetch.nonceEndpoint = "https://sideaita.net/wp-admin/admin-ajax.php?action=rest-nonce";
+</script>
+<script type="text/javascript" id="contact-form-7-js-extra">
+/* <![CDATA[ */
+var wpcf7 = [];
+/* ]]> */
+</script>
+<script type="text/javascript" src="js/index.js" id="contact-form-7-js"></script>
+<script type="text/javascript" src="js/jquery.blockUI.min.js" id="jquery-blockui-js"></script>
+<script type="text/javascript" id="wc-add-to-cart-js-extra">
+/* <![CDATA[ */
+var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/sideaita.net\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="js/add-to-cart.min.js" id="wc-add-to-cart-js"></script>
+<script type="text/javascript" src="js/js.cookie.min.js" id="js-cookie-js"></script>
+<script type="text/javascript" id="woocommerce-js-extra">
+/* <![CDATA[ */
+var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="js/woocommerce.min.js" id="woocommerce-js"></script>
+<script type="text/javascript" id="wc-cart-fragments-js-extra">
+/* <![CDATA[ */
+var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_027d4a30f3e6978d5113a80f5a6f9ed5","fragment_name":"wc_fragments_027d4a30f3e6978d5113a80f5a6f9ed5","request_timeout":"5000"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="js/cart-fragments.min.js" id="wc-cart-fragments-js"></script>
+<script type="text/javascript" src="js/custom.js" id="custom-js-js"></script>
+<script type="text/javascript" src="js/flatsome-live-search.js" id="flatsome-live-search-js"></script>
+<script type="text/javascript" src="js/hoverIntent.min.js" id="hoverIntent-js"></script>
+<script type="text/javascript" id="flatsome-js-js-extra">
+/* <![CDATA[ */
+var flatsomeVars = {"ajaxurl":"https:\/\/sideaita.net\/wp-admin\/admin-ajax.php","rtl":"","sticky_height":"70","lightbox":{"close_markup":"<button title=\"%title%\" type=\"button\" class=\"mfp-close\"><svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"feather feather-x\"><line x1=\"18\" y1=\"6\" x2=\"6\" y2=\"18\"><\/line><line x1=\"6\" y1=\"6\" x2=\"18\" y2=\"18\"><\/line><\/svg><\/button>","close_btn_inside":false},"user":{"can_edit_pages":false},"i18n":{"mainMenu":"Main Menu"},"options":{"cookie_notice_version":"1"}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="js/flatsome.js" id="flatsome-js-js"></script>
+<script type="text/javascript" src="js/flatsome-cookie-notice.js" id="flatsome-cookie-notice-js"></script>
+<script type="text/javascript" id="wpcf7cf-scripts-js-extra">
+/* <![CDATA[ */
+var wpcf7cf_global_settings = {"ajaxurl":"https:\/\/sideaita.net\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="js/scripts.js" id="wpcf7cf-scripts-js"></script>
+<script type="text/javascript" src="js/infinite-scroll.pkgd.min.js" id="flatsome-infinite-scroll-js-js"></script>
+<script type="text/javascript" id="flatsome-infinite-scroll-js-extra">
+/* <![CDATA[ */
+var flatsome_infinite_scroll = {"scroll_threshold":"400","fade_in_duration":"300","type":"spinner","list_style":"grid","history":"push"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="js/flatsome-infinite-scroll.js" id="flatsome-infinite-scroll-js"></script>
+<script type="text/javascript" src="js/woocommerce.js" id="flatsome-theme-woocommerce-js-js"></script>
+<script type="text/javascript" src="js/wp-embed.min.js" id="wp-embed-js"></script>
+<!--[if IE]>
+<script type='text/javascript' src='https://cdn.jsdelivr.net/gh/nuxodin/ie11CustomProperties@4.0.1/ie11CustomProperties.min.js?ver=4.0.1' id='css-vars-polyfill-js'></script>
+<![endif]-->
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"NRJS-7182f1690051a06a003","applicationID":"1039819783","transactionName":"M1YANRcFWEUCBkxbDQocIwIRDVlYTBVZVQdJRxAACxdGVxEAVkZPDFYDBQAWG1oKAlBG","queueTime":0,"applicationTime":685,"atts":"HxEDQ18fS0s=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+
+

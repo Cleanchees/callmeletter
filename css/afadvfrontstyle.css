@@ -1,0 +1,25 @@
+.archive .quantity { 
+	display: inline-block;
+}
+.afadv_qnt_fix {
+	max-width: 30%;
+	margin: 3px;
+	text-align: center;
+}
+.afadv_qnt_fix_cart {
+	text-align: center;
+}
+.afadv_dd_fix_qty {
+	margin-right: 3px;
+}
+
+.afqty{ margin-right: 10px; }
+
+.error_msg{ color: red; }
+
+.variations_form input[type="number"] {width: 4.235801032em;
+text-align: center;}
+
+div.hidden{
+	display: none !important;
+}
